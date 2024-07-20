@@ -1,0 +1,52 @@
+{% extends 'base.html' %}
+
+{% block title %}Accueil{% endblock %}
+
+{% block content %}
+<section id="intro" class="padding-large jarallax">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-7">
+          <div class="section-title my-5">
+            <h6 class="text-white display-2">Contribuer à l’amélioration des conditions de vie <em> des populations marginalisées  </em> et défavorisées du Sénégal »</h6>
+          </div>
+  
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card card-dark" data-aos="fade-up" data-aos-delay="0">
+            <div class="card-body">
+              <h3>Objectifs</h3>
+              <p>Promouvoir l’inclusion financière au Sénégal, Renforcer l’offre de produits et services des SFD ... 
+                </p>
+              <a href="#">+ Infos</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-dark" data-aos="fade-up" data-aos-delay="300">
+            <div class="card-body">
+              <h3>Approche</h3>
+              <p>Offrir des services financiers et non  financiers adaptés aux besoins des SFD et de leurs bénéficiaires
+             </p>
+              <a href="#">+ Infos</a>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-dark" data-aos="fade-up" data-aos-delay="600">
+            <div class="card-body">
+              <h3>Produits et Services</h3>
+              <p>Prêts aux SFD en monnaie locale, à des conditions souples et correspondant à leurs spécificités
+                </p>
+              <a href="#">L+ Infos</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% load static %}
+    <img src="{% static 'images/banner.jpg' %} " class="jarallax-img">
+  </section>
+{% endblock %}
