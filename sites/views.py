@@ -7,3 +7,6 @@ def accueil_view(request):
 
 def objectifs_view(request):
     return render(request,'objectifs.html')
+
+def presentation_view(request):
+    return render(request,"presentation.html")

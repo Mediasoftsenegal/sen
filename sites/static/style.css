@@ -10,9 +10,10 @@ Version: 1.2
 /** Base Styles
 --------------------------------------------------------------*/
 :root {
-  --accent-color: #F4BE37;
+  --accent-color: #F49320;
   --secondary-color: #E2EAF1;
   --dark-color: #092035;
+  --darks-color: #999999;
   --grey-color: #E2EAF1;
   --body-text-color: #7C8990;
   --light-text-color: #9CA5AD;
@@ -24,7 +25,7 @@ Version: 1.2
 body {
   font-family: 'Inter', sans-serif;
   font-weight: 400;
-  font-size: 19px;
+  font-size: 16px;
   line-height: 1.6em;
   color: var(--dark-color);
 }
@@ -82,12 +83,12 @@ a:hover {
 }
 a.btn-yellow,
 button.btn-yellow {
-  background-color: #FFB61D;
+  background-color: #F49320;
 }
 a.btn-yellow:hover,
 .btn-yellow:hover {
   background-color: #111;
-  color: #FFB61D;
+  color: #F49320;
 }
 
 /* Section Padding
@@ -268,7 +269,12 @@ a.btn-yellow:hover,
 .text-white .nav-link:hover {
   color: var(--accent-color);
 }
-
+.text-red .nav-link {
+  color:#FF0000;
+}
+.text-orange {
+  color: #F49320;
+}
 /* dark card */
 .card-body {
   padding: 2rem 2rem;
@@ -276,10 +282,29 @@ a.btn-yellow:hover,
 .card-dark {
   min-height: 254px;
   color: #9CA5AD;
-  background: rgba(9, 32, 53, 0.9);
+/*  background: rgba(9, 32, 53, 0.9); */
+  background: #E2EAF1;
+}
+.card-darkg {
+  min-height: 254px;
+  color: #F49320;
+/*  background: rgba(9, 32, 53, 0.9); */
+  background: #CCCCCC;
+}
+.card-darkb {
+  min-height: 254px;
+  color: #F49320;
+/*  background: rgba(9, 32, 53, 0.9); */
+  background: #DEEBF7;
+}
+.card-darkv {
+  min-height: 254px;
+  color:  #F49320;
+/*  background: rgba(9, 32, 53, 0.9); */
+  background: #E2F0D9;
 }
 .card-dark h3 {
-  color: #F4BE37;
+  color: #F49320;
 }
 .card-dark a {
   text-decoration-line: underline;
@@ -436,13 +461,13 @@ a.btn-yellow:hover,
   margin: 0;
 }
 .blockquote p {
-  font-size: 28px;
-  line-height: 150%;
+  font-size: 14px;
+  line-height: 175%;
   color: #092035;
 }
 .blockquote cite {
-  font-size: 18px;
-  margin-top: 27px;
+  font-size: 13px;
+  margin-top: 17px;
 }
 
 @media (max-width: 768px) {
