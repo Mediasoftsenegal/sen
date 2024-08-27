@@ -1,0 +1,131 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <title>Fondation Sen'Finances</title>
+  <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mediasof" content="kalayetech">
+    <meta name="keywords" content="Finances social et solidaire">
+    <meta name="description" content="Site de la Fondation ">
+<!-- link -->
+    <link rel="stylesheet" type="text/css" href="{% static  'css/vendor.css' %}">
+    <link href="{% static 'plugins/bootstrap-5.1.3/css/bootstrap.min.css' %} " rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static  'style.css' %}">
+    {% comment %} <link rel="stylesheet" type="text/css" href="{% static  'tes.css' %}"> {% endcomment %}
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+     <!-- link 
+	================================================== -->
+
+ <!-- script -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    
+    <script src="{% static 'js/modernizr.js' %}"></script>
+    <script src="{% static 'jar.js' %}"></script>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <!-- script 
+	================================================== -->
+	
+  <div id="overlayer">
+    <span class="loader">
+      <div class="dot dot-1"></div>
+      <div class="dot dot-2"></div>
+      <div class="dot dot-3"></div>
+    </span>
+  </div>
+  
+  <header class="site-header position-fixed py-1 text-white">
+      <nav id="header-nav" class="navbar navbar-expand-lg px-3 mb-3">
+    
+      <div class="container-fluid">
+        
+        <a class="navbar-brand" href="#"><img src=" {% static 'img/newlogos.png' %}" class="logo" /></a>
+  
+        <button class="navbar-toggler text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation"><ion-icon name="menu-outline"></ion-icon></button>
+        
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+          </div>
+          <div class="offcanvas-body">
+          <ul class="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3">
+            <li class="nav-item">
+              <a class="nav-link me-4" href="#intro">Accueil</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-4" href="#about">Présentation</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-4" href="#events">Interventions</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-4" href="#latest-stories">Partenariat</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-4" href="#section-des-articles">Actualités</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link me-4" href="#latest-stories">Contact</a>
+            </li>
+          </ul>
+         </div>
+         
+        </div>
+        <ul class="right-content-start list-unstyled d-flex">
+          <li><a href="#" class="nav-link"><ion-icon name="logo-facebook" role="img" class="md hydrated"></ion-icon></a></li>
+          <li><a href="#" class="nav-link"><ion-icon name="logo-linkedin" role="img" class="md hydrated"></ion-icon></a></li>
+          <li><a href="#" class="nav-link"><ion-icon name="logo-twitter" role="img" class="md hydrated"></ion-icon></a></li>
+        </ul>
+        </div>
+  
+    </nav>
+  </header>
+
+  {% block content %}
+  {% endblock %}
+
+
+<footer class="padding-large text-white bg-grey">
+	<div class="container">
+	    <div class="row">
+	    	
+	    	<div class="col-12 col-md-6">
+		        <img src="{% static 'img/newlogos.png' %}">
+		        <p>
+		        	<a href="mailto:senfinances@senfinances.sn">senfinances@senfinances.sn</a><br>
+		        	Point E - Rue de Saint-Louis - impasse UPIS - 1er étage Porte N°5  Dakar, Sénégal<br>
+              senfinances@senfinances.sn <br>
+		        	+221 33864 61 01
+		        </p>
+           
+		    </div>
+	    </div>
+	    <div class="d-flex justify-content-between flex-wrap py-4 my-4 border-top">
+	      <p>© 2024 Médiasoft</p>
+        <p><i>« Contribuer à l’amélioration des conditions de vie des populations marginalisées et défavorisées du Sénégal »</i> </p>
+	    </div>
+	</div>
+</footer>
+
+<script src="{% static 'js/jquery-1.11.0.min.js' %} "></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+<script src="{% static 'plugins/bootstrap-5.1.3/js/bootstrap.bundle.min.js ' %}"></script>
+<script src="{% static 'js/plugins.js ' %}"></script>
+<script src="{% static 'js/script.js' %}"></script>
+<script src="{% static 'js/jar.js' %}"></script>
+
+</body>
+</html>

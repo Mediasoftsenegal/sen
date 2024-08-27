@@ -1,0 +1,56 @@
+{% extends 'header.html' %}
+
+{% block title %}Présentation{% endblock %}
+
+{% block content %}
+<section id="intro" class="padding-large jarallax">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-10">
+				<div class="section-title my-5">
+					<h2 class="text-white display-2">Critères de séléction</h2>
+					<div class="breadcrumb text-white">
+						<span class="item"><a href="{% url 'accueil' %}" class="text-white">Accueil</a></span> &nbsp; / &nbsp; <span class="item"><a href="{% url 'interventions' %}"> Interventions</span> / &nbsp; <span class="item"><a href="{% url 'produits_services' %}"> Produits et services</a></span> / &nbsp; <span class="item" ><a href="{% url 'conditions_octroi' %}">Conditions d'octroi de crédit</a></span> / &nbsp; <span class="item"><a href="{% url 'suivi_evaluation' %}">Suivi et Evaluation</a></span> / &nbsp; <span class="item">Critères de séléction </span> &nbsp;/ &nbsp; <span class="item"><a href="{% url 'depot_demande' %}">Dépôt de demandes</a></span>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	{% load static %}
+<img src="{% static 'images/img_banner.jpg'  %}" class="jarallax-img">
+</section>
+
+<section class="pt-5 pb-5">
+	<div class="container">
+		<div class="row">
+			<div class="single-image col-md-12">
+				<p align="justify"><B>SEN’FINANCES</B> est une fondation reconnue d'utilité publique par décret <B>N°2007-959 signé le 7 septembre 2007</B> par le président de la république du Sénégal.
+				<br>Elle prend le relais du Fonds de Contrepartie Sénégalo-Suisse, et se doit ainsi d’assurer la continuité des opérations de microfinance précédemment dévolues à ce dernier. Ses ambitions dépassent cependant celles du FCSS.<br><br><i>«La finalité de la Fondation Sen’Finances est de contribuer à l’amélioration des conditions de vie des populations marginalisées et défavorisées du Sénégal. Son ambition est d’être un acteur reconnu et respecté de la microfinance au Sénégal »</i>.</p>
+				<p align="justify">La Fondation Sen’Finances, en adéquation avec les priorités de développement du Sénégal en matière de lutte contre la pauvreté, vise l’amélioration des conditions de vie des populations marginalisées et défavorisées du pays</p>
+				
+			</div>
+		</div>
+		<div class="row">
+			<div class="col"><img src="{% static 'images/img_pres.jpg' %}" alt="About us" /></div>
+			<div class="col"><img src="{% static 'images/img_pres1.jpg' %}" alt="About us" /></div>
+			<div class="col"><img src="{% static 'images/img_pres2.jpg' %}" alt="About us" /></div>
+		</div>
+		<div class="row">
+			<div class="col-md-12"><br>
+				<p>
+					"Le choix d’une Fondation de droit sénégalais comme forme juridique a été guidé par le souci d’avoir une institution ayant un caractère d’utilité publique et qui soit pertinente de par sa stratégie d’intervention, tout en présentant de solides garanties de performance et de viabilité."
+				</p>
+				<p>
+					Le projet de création d’une Fondation d’Utilité Publique (FUP) dans le secteur de la microfinance est novateur au Sénégal. Il en est attendu une œuvre d’utilité publique soutenant financièrement et socialement les institutions actives dans le secteur de la microfinance.
+				</p>
+				<p>
+					<i><B>Le projet de création d’une Fondation d’Utilité Publique (FUP) dans le secteur de la microfinance est novateur au Sénégal. Il en est attendu une œuvre d’utilité publique soutenant financièrement et socialement les institutions actives dans le secteur de la microfinance.</B></i>
+				</p>
+			</div>
+
+		</div>
+	</div>
+</section>
+
+ {% endblock %}

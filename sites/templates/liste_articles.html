@@ -1,0 +1,238 @@
+<!-- blog/templates/blog/post_list.html -->
+
+{% load static %}
+
+
+<body>
+    <div class="container">
+        <h1 class="mt-5">Listes des articles</h1>
+        <div class="list-group">
+            
+                <a href="" class="list-group-item list-group-item-action">
+                    <h5 class="mb-1"></h5>
+                    <small>{{ post.published_date }}</small>
+                    <p class="mb-1">{{ post.content|slice:":100" }}...</p>
+                </a>
+          
+        </div>
+    </div>
+	<section id="latest-blog" class="scrollspy-section padding-large">
+	<div class="container">
+		
+		<div class="row">
+			<div class="col-md-12">
+				
+				<!-- post grid -->
+				<div class="post-grid">
+					<div class="row" data-masonry='{"percentPosition": true }'>
+						
+						<div class="col-md-4">
+							
+							<article class="post-item">
+
+								<figure>
+									<a href="#" class="image-hvr-effect">
+										<img src="images/post-thumb-1.jpg" alt="post" class="post-image">			
+									</a>
+								</figure>
+
+								<div class="post-content">	
+									<div class="post-meta">Events</div>
+								    <h2 class="post-title"><a href="single-post.html">modern vibes bedrooms, todays trending design</a></h2>
+								    <p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis nulla blandit dui.</p>
+								    <a href="single-post.html" class="btn-link">Read more</a>
+								</div>
+							</article>
+
+						</div>
+
+						<div class="col-md-4">
+
+							<article class="post-item">
+								<figure>
+									<a href="#" class="image-hvr-effect">
+										<img src="images/post-thumb-2.jpg" alt="post" class="post-image">
+									</a>
+								</figure>
+								<div class="post-content">	
+									<div class="post-meta">Events</div>
+								    <h2 class="post-title"><a href="single-post.html">How to make minimalist living rooms pop-out</a></h2>
+								    <p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis nulla blandit dui.</p>
+								    <a href="single-post.html" class="btn-link">Read more</a>
+								</div>
+							</article>
+						</div>
+
+						<div class="col-md-4">
+							
+							<article class="post-item">
+
+								<figure>
+									<a href="#" class="image-hvr-effect">
+										<img src="images/post-thumb-3.jpg" alt="post" class="post-image">			
+									</a>
+								</figure>
+
+								<div class="post-content">	
+									<div class="post-meta">Events</div>
+								    <h2 class="post-title"><a href="single-post.html">modern vibes bedrooms, todays trending design</a></h2>
+								    <p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis nulla blandit dui.</p>
+								    <a href="single-post.html" class="btn-link">Read more</a>
+								</div>
+							</article>
+
+						</div>
+
+						<div class="col-md-4">
+
+							<article class="post-item">
+								<figure>
+									<a href="#" class="image-hvr-effect">
+										<img src="images/post-thumb-4.jpg" alt="post" class="post-image">
+									</a>
+								</figure>
+								<div class="post-content">	
+									<div class="post-meta">Events</div>
+								    <h2 class="post-title"><a href="single-post.html">How to make minimalist living rooms pop-out</a></h2>
+								    <p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis nulla blandit dui.</p>
+								    <a href="single-post.html" class="btn-link">Read more</a>
+								</div>
+							</article>
+						</div>
+
+						<div class="col-md-4">
+							<article class="post-item">
+								<figure>
+									<a href="#" class="image-hvr-effect">
+										<img src="images/post-thumb-2.jpg" alt="post" class="post-image">
+									</a>
+								</figure>
+								<div class="post-content">		
+									<div class="meta-date">Mar 27, 2021</div>			
+								    <h2 class="post-title"><a href="single-post.html">how to make your resort that looks outstanding</a></h2>
+								    <p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis nulla blandit dui.</p>
+								    <a href="single-post.html" class="btn-link">Read more</a>
+								</div>
+							</article>
+						</div>
+
+					</div>
+				</div>
+				<!-- / post grid -->
+
+			</div>
+
+		</div>
+
+	</div>
+</section>
+
+
+
+{% extends 'header.html' %}
+
+{% block title %}Actualités{% endblock %}
+    
+{% block content %}
+
+<section id="intro" class="padding-large jarallax">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<div class="section-title my-5">
+					<div class="breadcrumb text-white">
+						<span class="item"><a href="index.html" class="text-white">Accueil</a></span> &nbsp; / &nbsp; <span class="item">Actualités</span>
+					</div>
+					<h2 class="text-white display-2">Actualités</h2>
+				</div>
+
+			</div>
+		</div>
+	</div>
+	<img src="images/banner.jpg" class="jarallax-img">
+</section>
+
+<section id="latest-blog" class="scrollspy-section padding-large">
+	<div class="container">
+		
+		<div class="row">
+			<div class="col-md-12">
+				
+				<!-- post grid -->
+                {% for post in posts %}
+				<div class="post-grid">
+					<div class="row" data-masonry='{"percentPosition": true }'>
+						
+						<div class="col-md-4">
+							
+							<article class="post-item">
+
+								<figure>
+									<a href="{% url 'post_detail' pk=post.pk %}" class="image-hvr-effect">
+										<img src="{{ post.phto }}" alt="post" class="post-image">			
+									</a>
+								</figure>
+
+								<div class="post-content">	
+									<div class="post-meta">{{ post.title }}</div>
+								    <h2 class="post-title"><a href="single-post.html">{{ post.title }}</a></h2>
+								    <p>{{ post.contenu }}</p>
+                                    <p>{{ post.date_creation }}</p>
+                                    <p>{{ post.auteur }}</p>
+                                    <p>{{ post.categorie }}</p>
+								    <a href="{% url 'post_detail' pk=post.pk %}" class="btn-link">Plus d'infos</a>
+								</div>
+							</article>
+
+						</div>
+
+						<div class="col-md-4">
+
+							<article class="post-item">
+								<figure>
+									<a href="#" class="image-hvr-effect">
+										<img src="images/post-thumb-2.jpg" alt="post" class="post-image">
+									</a>
+								</figure>
+								<div class="post-content">	
+									<div class="post-meta">Events</div>
+								    <h2 class="post-title"><a href="single-post.html">How to make minimalist living rooms pop-out</a></h2>
+								    <p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis nulla blandit dui.</p>
+								    <a href="single-post.html" class="btn-link">Read more</a>
+								</div>
+							</article>
+						</div>
+
+						<div class="col-md-4">
+							
+							<article class="post-item">
+
+								<figure>
+									<a href="#" class="image-hvr-effect">
+										<img src="images/post-thumb-3.jpg" alt="post" class="post-image">			
+									</a>
+								</figure>
+
+								<div class="post-content">	
+									<div class="post-meta">Events</div>
+								    <h2 class="post-title"><a href="single-post.html">modern vibes bedrooms, todays trending design</a></h2>
+								    <p>Lectus molestie id enim ipsum. Netus sed cursus nibh iaculis ipsum turpis nulla blandit dui.</p>
+								    <a href="single-post.html" class="btn-link">Read more</a>
+								</div>
+							</article>
+
+						</div>
+                        {% endfor %}
+						
+					</div>
+				</div>
+				<!-- / post grid -->
+
+			</div>
+
+		</div>
+
+	</div>
+</section>
+
+{% endblock %}

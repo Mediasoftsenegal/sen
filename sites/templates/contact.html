@@ -1,0 +1,83 @@
+{% extends 'header.html' %}
+
+{% block title %}Présentation{% endblock %}
+
+{% block content %}
+<section id="intro" class="padding-large jarallax">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-7">
+				<div class="section-title my-5">
+					<h2 class="text-white display-2">Contact</h2>
+					<div class="breadcrumb text-white">
+						<span class="item"><a href="{% url 'accueil' %}" class="text-white">Accueil</a></span> &nbsp; / &nbsp; <span class="item">Contact</span>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	{% load static %}
+<img src="{% static 'images/img_banner.jpg'  %}" class="jarallax-img">
+</section>
+
+<section class="contact-information padding-large">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-6 mb-3">
+				
+				<h2>Contactez-nous ?</h2>
+
+				<div class="contact-detail d-flex flex-wrap mt-4">
+					<div class="detail mr-6 mb-4">
+						<p>Adresse du bureau</p>
+						<ul class="list-unstyled list-icon">
+							<li><i class="icon icon-phone"></i>+221 33864 61 01</li>
+							<li><i class="icon icon-envelope-o"></i><a href="mailto:senfinances@senfinances.sn ">senfinances@senfinances.sn </a></li>
+							<li><i class="icon icon-location2"></i>Point E - Rue de Saint-Louis - impasse UPIS - 1er étage Porte N°5  Dakar, Sénégal</li>
+						</ul>
+					</div><!--detail-->
+
+				</div><!--contact-detail-->
+			</div><!--col-md-6-->
+
+			<div class="col-md-6">
+				
+				<div class="contact-information">
+					<h2>Envoyez un message</h2>
+					<form name="contactform" action="contact.php" method="post" class="form-group contact-form mt-4">
+						<div class="row">
+					    	<div class="col-md-6">
+								<input type="text" minlength="2" name="name" placeholder="Prénom et Nom" class="form-control" required>
+							</div>
+							<div class="col-md-6">
+								<input type="email" name="email" placeholder="E-mail" class="form-control" required>
+							</div>
+						</div>
+
+						<div class="row">
+							<div class="col-md-12">
+
+								<textarea class="form-control mt-4 mb-4" name="message" placeholder="Message" style="height: 150px;" required></textarea>
+
+								<label>
+								    <input type="checkbox" required>
+								    <span class="label-body">J'accepte tous les <a href="#">termes et conditions</a></span>
+								</label>
+							   <br>
+								<div class="d-grid">
+									<button type="submit" name="submit" class="btn btn-dark">Envoyer</button>
+								</div>
+							</div>
+						</div>
+					</form>
+
+				</div><!--contact-information-->
+
+			</div><!--col-md-6-->
+
+		</div>
+	</div>
+</section>
+
+ {% endblock %}

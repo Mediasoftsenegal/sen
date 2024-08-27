@@ -1,0 +1,71 @@
+ {% extends 'header.html' %}
+
+{% block title %}Actualités{% endblock %}
+
+{% block content %}
+<section id="intro" class="padding-large jarallax">
+	<div class="container">
+		<div class="row">
+			<div class="col-md-9">
+				<div class="section-title my-5">
+					<h2 class="text-white display-2">Actualités de la Fondation</h2>
+					<div class="breadcrumb text-white">
+						<span class="item"><a href="{% url 'accueil' %}" class="text-white">Accueil</a></span> &nbsp; / &nbsp; <span class="item">Actualités</span>
+					</div>
+					
+				</div>
+			</div>
+		</div>
+	</div>
+{% load static %}
+<img src="{% static 'images/img_banner.jpg'  %}" class="jarallax-img">
+</section> 
+<section class="pt-5 pb-5">
+    <div class="container">      
+      <div class="col-md-12">    <h2 class="mt-5">Actualités</h2>  
+      <div class="row">
+      
+        <!-- post grid -->
+          <div class="post-grid">
+            <div class="row" data-masonry='{"percentPosition": true }'>
+              {% for articles in article %}
+              <div class="col-md-4">                 
+                <article class="post-item">
+                  <figure>
+                    <a href="{% url 'articles_detail' articles.id %}" class="image-hvr-effect">
+                    <img src="{% static articles.imagealaune.url %}" alt="{{ articles.titre}}"   class="post-image">
+                    </a>
+                  </figure>
+    
+                  <div class="post-content">	
+                    <div class="post-meta">Catégorie : {{ articles.categorie }}</div>
+                    <h5 class="post-title"><a href="{% url 'articles_detail' articles.id %}">{{ articles.titre }}</a></h5>
+                    <p>{{ articles.contenu | truncatewords:30 }}</p>
+                    <a href="{% url 'articles_detail' articles.id %}" class="btn-link"><b>Plus d'infos</b></a>Publié par {{ articles.auteur }} <br>{{ articles.date_publication }}
+                  </div>
+                </article>
+              </div>
+            {% endfor %}   
+
+            <span>Page {{ article.number }} sur {{ article.paginator.num_pages }}</span>
+            <div>
+                {% if article.has_previous %}
+                    <a href="?page={{ article.previous_page_number }}">Précédent</a>
+                {% endif %}
+                {% if article.has_next %}
+                    <a href="?page={{ article.next_page_number }}">Suivant</a>
+                {% endif %}
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+</div>
+<!--/section-->
+</section>
+  <div>
+  </div>
+  
+{% endblock %}
