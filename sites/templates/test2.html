@@ -1,0 +1,127 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Carrousel avec Jarallax</title>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="format-detection" content="telephone=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="mediasof" content="kalayetech">
+    <meta name="keywords" content="Finances social et solidaire">
+    <meta name="description" content="Site de la Fondation ">
+    <link rel="stylesheet" href="{% static 'stylo.css'%}">
+    <!-- Inclure Jarallax CSS via CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.12.8/jarallax.css" />
+    <!-- Bootstrap CSS -->
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{% static 'plugins/bootstrap-5.1.3/css/bootstrap.min.css' %} " rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="{% static  'style.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static  'tes.css' %}">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+    <header class="site-header position-fixed py-1 text-white">
+      <nav id="header-nav" class="navbar navbar-expand-lg px-3 mb-3">
+     
+       <div class="container-fluid">
+         
+         <a class="navbar-brand" href="#"><img src=" {% static 'img/newlogos.png' %}" class="logo" /></a>
+   
+         <button class="navbar-toggler text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation"><ion-icon name="menu-outline"></ion-icon></button>
+         
+         <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+           <div class="offcanvas-header">
+             <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu</h5>
+             <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+           </div>
+           <div class="offcanvas-body">
+           <ul class="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3">
+             <li class="nav-item">
+               <a class="nav-link me-4" href="#intro">Accueil</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link me-4" href="#about">Présentation</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link me-4" href="#events">Interventions</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link me-4" href="#latest-stories">Partenariat</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link me-4" href="#section-des-articles">Actualités</a>
+             </li>
+             <li class="nav-item">
+               <a class="nav-link me-4" href="#latest-stories">Contact</a>
+             </li>
+           </ul>
+          </div>
+          
+         </div>
+         <ul class="right-content-start list-unstyled d-flex">
+           <li><a href="#" class="nav-link"><ion-icon name="logo-facebook" role="img" class="md hydrated"></ion-icon></a></li>
+           <li><a href="#" class="nav-link"><ion-icon name="logo-linkedin" role="img" class="md hydrated"></ion-icon></a></li>
+           <li><a href="#" class="nav-link"><ion-icon name="logo-twitter" role="img" class="md hydrated"></ion-icon></a></li>
+         </ul>
+         </div>
+   
+     </nav> 
+   </header>
+</head>
+<body>
+  {% block content %}
+    <div class="carrousel-container">
+        <div class="message">
+            <h1>Votre Message Ici</h1>
+        </div>
+
+        <div class="slider">
+            <div class="slides">
+                <!-- Slide 1 avec effet parallaxe -->
+                <div class="slide jarallax" data-jarallax data-speed="0.5">
+                    <img class="jarallax-img" src="{% static 'slider/01.jpg'' %}" alt="Image 1">
+                    <div class="encadre">
+                        <p>Encadré 1: Texte par-dessus l'image 1</p>
+                    </div>
+                </div>
+                <!-- Slide 2 avec effet parallaxe -->
+                <div class="slide jarallax" data-jarallax data-speed="0.5">
+                    <img class="jarallax-img" src="{% static 'slider/02.jpg' %}" alt="Image 2">
+                    <div class="encadre">
+                        <p>Encadré 2: Texte par-dessus l'image 2</p>
+                    </div>
+                </div>
+                <!-- Slide 3 avec effet parallaxe -->
+                <div class="slide jarallax" data-jarallax data-speed="0.5">
+                    <img class="jarallax-img" src="{% static 'slider/03.jpg' %}" alt="Image 3">
+                    <div class="encadre">
+                        <p>Encadré 3: Texte par-dessus l'image 3</p>
+                    </div>
+                </div>
+                <!-- Ajoutez d'autres slides si nécessaire -->
+            </div>
+        </div>
+    </div>
+
+    <!-- Inclure Jarallax JS via CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.12.8/jarallax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jarallax/1.12.8/jarallax-element.min.js"></script>
+
+    <!-- Votre script pour le slider -->
+    <script src="{% static 'js/jars.js' %}"></script>
+
+    <script>
+        // Initialiser Jarallax
+        jarallax(document.querySelectorAll('.jarallax'), {
+            speed: 0.5
+        });
+    </script>
+    {% endblock %}
+</body>
+</html>

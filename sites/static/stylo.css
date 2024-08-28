@@ -1,0 +1,63 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.carrousel-container {
+    width: 1000%;
+    margin: auto;
+    text-align: center;
+}
+
+.message h1 {
+    margin-bottom: 20px;
+    font-size: 2em;
+    color: #333;
+}
+
+.slider {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.slides {
+    display: flex;
+    transition: 0.5s ease-in-out;
+}
+
+.slide {
+    position: relative;
+    min-width: 100%;
+    transition: 0.5s ease-in-out;
+}
+
+.jarallax-img {
+    width: 1200px;
+    height: 800px;
+    object-fit: cover;
+}
+
+.encadre {
+    position: absolute;
+    top: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 20px;
+    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+    color: white;
+    border-radius: 10px;
+    width: 70%;
+    text-align: center;
+}
+
+.encadre p {
+    font-size: 1.5em;
+    margin: 0;
+}

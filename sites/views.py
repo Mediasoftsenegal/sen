@@ -75,3 +75,6 @@ def contact_view(request):
      
 def test_view(request):
     return render(request,'test.html')   
+
+def test2_view(request):
+    return render(request,'test2.html')   

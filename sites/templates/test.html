@@ -75,9 +75,7 @@
     {% endblock %}
     <!-- Your carousel will go here -->
     <div class="carrousel-container">
-      <div class="message">
-          <h1><p class="text-red display-2"> <em>« Une Microfinance  saine et  </em> pérenne »</p></h1>
-      </div>
+      
         <div class="slider">
           <div class="slides">
               <!-- Slide 1 -->
@@ -86,7 +84,7 @@
                   <div class="encadre">
                       <h3>Objectifs</h3>
                       <p>Promouvoir l’inclusion financière au Sénégal, Renforcer l’offre de produits et services des SFD ... </p>
-                      <a href="#">+ Infos</a>
+                      <button type="button" class="btn btn-primary"><a href="#"> + Infos</a></button>
                   </div>
               </div>
 
@@ -96,7 +94,7 @@
                     <div class="encadre">
                       <h3>Approche</h3>
                         <p>Offrir des services financiers et non  financiers adaptés aux besoins des SFD et de leurs bénéficiaires </p>
-                        <a href="#">+ Infos</a>
+                        <button type="button" class="btn btn-primary"><a href="#"> + Infos</a></button>
                     </div>
               </div>
 
@@ -106,13 +104,18 @@
                     <div class="encadre">
                       <h3>Produits et Services</h3>
                         <p>Prêts aux SFD en monnaie locale, à des conditions souples et correspondant à leurs spécificités</p>
-                        <a href="#">+ Infos</a>
+                        <button type="button" class="btn btn-primary"><a href="#"> + Infos</a></button>
                     </div>
               </div>
+              
               <!-- Ajoutez d'autres slides selon vos besoins -->
           </div>
+          <div class="message">
+            <h1><p class="text-red display-2"> <em>« Une Microfinance  saine et  </em> pérenne »</p></h1>
+        </div>
         </div>
     </div>
     <script src="{% static 'js/jar.js' %} "></script>
+    {% endblock %}
 </body>
 </html>

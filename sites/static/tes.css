@@ -36,39 +36,41 @@ body {
   } 
   .slides {
     display: flex;
-    transition: 0.5s;
+    transition: 0.5s ease-in-out;
 }
   .slide {
     position: relative;
     min-width: 100%;
-    transition: 0.5s;
+    transition: 0.5s ease-in-out;;
 }
 
   .slide img {
     width: 100%;
-    height: auto;
+    height:70%;
+    object-fit: cover;
     }
 
     .encadre {
       position: absolute;
-      top: 500px;
-      width: 50px;
-      height: 150px;
-      left: 980px;
-      right: 200px;
-      bottom: 350PX;
+      top:700px;
+      width: 10px;
+      height: 250px;
+      left: 800px;
+      right: 1px;
+      bottom: 90px;
       transform: translateX(-50%);
       padding: 30px;
       background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
       color: white;
       border-radius: 10px;
-      width: 70%;
+      width: 40%;
       text-align: left;
   }
 
   
   .encadre p {
     font-size: 1.2em;
+    color: antiquewhite;
   }
 
  
