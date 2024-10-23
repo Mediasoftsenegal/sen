@@ -1,56 +1,247 @@
-{% extends 'header.html' %}
+{% include 'header.html' %} 
 
-{% block title %}Présentation{% endblock %}
+<body>
+    {% block content %}
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
 
-{% block content %}
-<section id="intro" class="padding-large jarallax">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-10">
-				<div class="section-title my-5">
-					<h2 class="text-white display-2">Critères de séléction</h2>
-					<div class="breadcrumb text-white">
-						<span class="item"><a href="{% url 'accueil' %}" class="text-white">Accueil</a></span> &nbsp; / &nbsp; <span class="item"><a href="{% url 'interventions' %}"> Interventions</span> / &nbsp; <span class="item"><a href="{% url 'produits_services' %}"> Produits et services</a></span> / &nbsp; <span class="item" ><a href="{% url 'conditions_octroi' %}">Conditions d'octroi de crédit</a></span> / &nbsp; <span class="item"><a href="{% url 'suivi_evaluation' %}">Suivi et Evaluation</a></span> / &nbsp; <span class="item">Critères de séléction </span> &nbsp;/ &nbsp; <span class="item"><a href="{% url 'depot_demande' %}">Dépôt de demandes</a></span>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-danger px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Dakar, Dkr 22 450 Dakar Ponty, Sénégal</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>(+221) 33 864 61 01 </small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>senfinances@senfinances.sn</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    {% load static %}
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            
+            <a href="#" class="navbar-brand p-0">
+				<h1 class="m-0"><img src=" {% static 'img/neologo.jpg' %}" width="70%" height="100%" class="logosen" /></h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+				<div class="navbar-nav ms-auto py-0">
+                    <a href="{% url 'accueil' %}" class="nav-item nav-link">Accueil</a>
+					<div class="nav-item dropdown">
+                    	<a href="{% url 'presentation' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" class="nav-item nav-link active">Présentation</a>
+						<div class="dropdown-menu m-0">
+							<a href="{% url 'generale' %}" class="dropdown-item">Présentation générale</a>
+							<a href="{% url 'missions_objectifs' %}" class="dropdown-item">Missions et objectifs</a>
+							<a href="{% url 'organisations' %}" class="dropdown-item">Organisme et gouvernance</a>
+							<a href="{% url 'historique' %}" class="dropdown-item">Historique</a>
+							<a href="{% url 'contexte' %}" class="dropdown-item">Contexte</a>
+							<a href="{% url 'equipe' %}" class="dropdown-item">Equipe opérationnelle</a>
+						</div>
 					</div>
-					
-				</div>
-			</div>
-		</div>
-	</div>
-	{% load static %}
-<img src="{% static 'images/img_banner.jpg'  %}" class="jarallax-img">
-</section>
+                    <div class="nav-item dropdown">
+                        <a href="{% url 'interventions' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" class="nav-item nav-link">Interventions</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="{% url 'produits_services' %}" class="dropdown-item">Produits et Services</a>
+                                <a href="{% url 'conditions_octroi' %}" class="dropdown-item">Conditions d'octroi de crédit</a>
+                                <a href="{% url 'suivi_evaluation' %}" class="dropdown-item">Suivi et évaluation</a>
+                                <a href="{% url 'criteres_selection' %}" class="dropdown-item">Critères de sélection</a>
+                                <a href="{% url 'depot_demande' %}" class="dropdown-item">Dépôts des demandes</a>
+                            </div>
+                        </div> 
+                        <div class="nav-item dropdown">
+                            <a href="{% url 'partenariat' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" class="nav-item nav-link">Partenariat</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="{% url 'generale' %}" class="dropdown-item">Réseaux et groupes de réflexion </a>
+                                <a href="{% url 'missions_objectifs' %}" class="dropdown-item">Principes de partenariat</a>
+                            </div>
+                        </div> 
+                    <a href="{% url 'actualites' %}" class="nav-item nav-link">Actualités</a>
+                    <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                </div>
+                <butaton type="button" class="btn text-info ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
+            </div>
+        </nav> 
+    
+        <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+            <div class="row py-5">
+                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                    <h1 class="display-4 text-white animated zoomIn">Critères de sélection</h1>
+                    <a href="" class="h5 text-white">Accueil</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="{% url 'presentation' %}" class="h5 text-white">Interventions</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="{% url 'generale' %}" class="h5 text-white active">Produits et services</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="{% url 'missions_objectifs' %}" class="h5 text-white">Conditions d'octroi de crédit</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="{% url 'organisations' %}" class="h5 text-white">Suivi et évaluation</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="{% url 'historique' %}" class="h5 text-white">Dépôts des demandes</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
 
-<section class="pt-5 pb-5">
-	<div class="container">
-		<div class="row">
-			<div class="single-image col-md-12">
-				<p align="justify"><B>SEN’FINANCES</B> est une fondation reconnue d'utilité publique par décret <B>N°2007-959 signé le 7 septembre 2007</B> par le président de la république du Sénégal.
-				<br>Elle prend le relais du Fonds de Contrepartie Sénégalo-Suisse, et se doit ainsi d’assurer la continuité des opérations de microfinance précédemment dévolues à ce dernier. Ses ambitions dépassent cependant celles du FCSS.<br><br><i>«La finalité de la Fondation Sen’Finances est de contribuer à l’amélioration des conditions de vie des populations marginalisées et défavorisées du Sénégal. Son ambition est d’être un acteur reconnu et respecté de la microfinance au Sénégal »</i>.</p>
-				<p align="justify">La Fondation Sen’Finances, en adéquation avec les priorités de développement du Sénégal en matière de lutte contre la pauvreté, vise l’amélioration des conditions de vie des populations marginalisées et défavorisées du pays</p>
-				
-			</div>
-		</div>
-		<div class="row">
-			<div class="col"><img src="{% static 'images/img_pres.jpg' %}" alt="About us" /></div>
-			<div class="col"><img src="{% static 'images/img_pres1.jpg' %}" alt="About us" /></div>
-			<div class="col"><img src="{% static 'images/img_pres2.jpg' %}" alt="About us" /></div>
-		</div>
-		<div class="row">
-			<div class="col-md-12"><br>
-				<p>
-					"Le choix d’une Fondation de droit sénégalais comme forme juridique a été guidé par le souci d’avoir une institution ayant un caractère d’utilité publique et qui soit pertinente de par sa stratégie d’intervention, tout en présentant de solides garanties de performance et de viabilité."
-				</p>
-				<p>
-					Le projet de création d’une Fondation d’Utilité Publique (FUP) dans le secteur de la microfinance est novateur au Sénégal. Il en est attendu une œuvre d’utilité publique soutenant financièrement et socialement les institutions actives dans le secteur de la microfinance.
-				</p>
-				<p>
-					<i><B>Le projet de création d’une Fondation d’Utilité Publique (FUP) dans le secteur de la microfinance est novateur au Sénégal. Il en est attendu une œuvre d’utilité publique soutenant financièrement et socialement les institutions actives dans le secteur de la microfinance.</B></i>
-				</p>
-			</div>
 
-		</div>
-	</div>
-</section>
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-danger p-3" placeholder="Tapez le mot-clé de recherche">
+                        <button class="btn btn-danger px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
 
- {% endblock %}
+
+    <!-- About Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-7">
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h1 class="mb-0">Critères de sélection</h1>
+                    </div>
+                    <p class="mb-4" align="justify">Du Fonds de Contrepartie Sénégalo-Suisse …Créé dans le cadre d’un accord de réduction de dette signé le 4 juillet 1994 entre les gouvernements suisse et sénégalais, le Fonds de Contrepartie Sénégalo-Suisse fut l’un des douze fonds issus du programme suisse de désendettement créatif. D’un montant total de <b>1,9 milliards de francs CFA</b> , il était destiné au financement des Systèmes Financiers Décentralisés (SFD) et à la promotion des micros, petites et moyennes entreprises au Sénégal.</p>
+                    <p class="mb-4" align="justify">Il a connu deux grandes phases dans son fonctionnement :  <br>
+                    <br>la première, de 1995 à 1998 durant laquelle seuls des crédits directs ont été accordés, au profit de promoteurs individuels et de micro et petites entreprises intervenant essentiellement dans le secteur primaire. Au total, <b>17 projets</b> ont été financés pour une enveloppe globale de <b>169 623 262 FCFA</b>. Le taux de recouvrement pour ces projets de la première phase est d’environ 70%.
+
+                    La seconde phase, de 1998 à 2007, basée sur le principe de l’octroi de lignes de crédit à des intermédiaires financiers de type Systèmes Financiers Décentralisés. Un total de 32 lignes de crédit ont été accordées pour une enveloppe globale de<b> 1 617 715 420 FCFA</b> . Ce montant se répartit en <b>1 540 932 600 FCFA</b> de lignes de crédit et <b>76 782 820 FCFA</b>de subventions pour la formation et l’appui institutionnel.
+
+                    Ces lignes de crédit ont permis d’octroyer près de 6 000 prêts dont les montants varient entre 10 000 et 12 000 000 F CFA, et de toucher au total plus de 25 000 personnes. Pour cette deuxième phase, le taux de recouvrement est de 92%.<br>
+                    <p class="mb-4">Le FCSS a toujours joui d’une bonne réputation dans le système de l’intermédiation financière et de la microfinance du Sénégal.</p>
+                    
+                    <p class="mb-4" align="justify">L’évaluation à mi-parcours du FCSS réalisée en 2001 souligne l’originalité et l’efficacité de sa démarche qui se caractérise notamment par une forte implication des différents organes (Secrétariat Exécutif, Comité Technique et Comité Bilatéral) dans le processus de sélection des projets, un capital disponible, un choix pertinent des bénéficiaires et une flexibilité des conditionnalités. Cette combinaison d’atouts s’est fait ressentir au niveau des bénéficiaires. En effet, un impact positif a été constaté sur leurs conditions de vie, se traduisant par une augmentation de leur volume d’activités, de leurs revenus et de leur niveau d’épargne. L’impact positif provient également des subventions accordées qui ont permis la formation de leaders d’organisations à la gestion et la mise en place d’outils de gestion.</p>
+                    <p class="mb-4">… A la Fondation Sen’Finances</p>
+                    <p class="mb-4">Cependant, l’un des concepts clés du programme de désendettement créatif lancé par la Suisse en 1991 prévoyait le désengagement du dispositif opérationnel du Fonds environ dix ans après sa mise en place.
+                        C’est la raison pour laquelle les différents acteurs s’étant accordés sur le principe de pérenniser l’expérience du FCSS ont été amenés à réfléchir sur son avenir institutionnel, tout en tenant compte des forces et faiblesses relevées dans son fonctionnement.</p>
+
+                    <p class="mb-4">Ces réflexions ont conduit à la décision de pérenniser l’expérience du FCSS en mettant sur pied une fondation d’utilité publique: la Fondation Sen’Finances.
+                        Pour poser les bases de la Fondation, les deux Gouvernements se sont entendus sur un nouvel accord signé le 22 juillet 2004, portant sur le transfert des ressources du FCSS à Sen’Finances.
+                        La Fondation Sen’Finances a, outre l’Etat sénégalais, sept autres membres fondateurs parmi lesquels les institutions qui étaient représentées au sein du Comité Technique du FCSS.</p>
+
+                    <p class="mb-4">La Fondation Sen’Finances se conforme aux exigences légales et réglementaires en vigueur et exerce ses activités sous la tutelle administrative et technique du Ministère de l’Economie et des Finances. Elle a été reconnue d’utilité publique par le Décret N° 2007-959 signé le 7 septembre 2007par le Président de la République du Sénégal.</p>
+                </div>
+                <div class="col-lg-5" style="min-height: 500px;">
+                    <div class="position-relative h-100">
+                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{% static 'img/img_present.jpg' %}" style="object-fit: cover;">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    <!-- Team Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+                <h1 class="mb-0">Equipe opérationnelle</h1>
+            </div>
+            <div class="row g-5">
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="{% static 'img/team-1.jpg' %}" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-primary">Mme Denise Fatoumata NDOUR</h4>
+                            <p class="text-uppercase m-0">Administrateur Général</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="{% static 'img/team-2.jpg' %}" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-primary">Mme Ramatoulaye Fine SARR</h4>
+                            <p class="text-uppercase m-0">Assistante de Direction</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <div class="team-img position-relative overflow-hidden">
+                            <img class="img-fluid w-100" src="{% static 'img/team-3.jpg' %}" alt="">
+                            <div class="team-social">
+                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
+                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
+                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>
+                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
+                            </div>
+                        </div>
+                        <div class="text-center py-4">
+                            <h4 class="text-primary">Mr Papa Samba THIAM</h4>
+                            <p class="text-uppercase m-0">Coursier</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+    <!-- Team End -->
+    {% include 'footer.html' %} 
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    {% load static %}
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

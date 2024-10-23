@@ -1,4 +1,4 @@
-* {
+/* /* * {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -6,25 +6,19 @@
 
 body {
     font-family: Arial, sans-serif;
+    overflow-x: hidden;
 }
 
 .carrousel-container {
-    width: 1000%;
-    margin: auto;
-    text-align: center;
-}
-
-.message h1 {
-    margin-bottom: 20px;
-    font-size: 2em;
-    color: #333;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    text-align: left;
 }
 
 .slider {
     width: 100%;
-    overflow: hidden;
     position: relative;
-    margin-bottom: 20px;
 }
 
 .slides {
@@ -35,29 +29,31 @@ body {
 .slide {
     position: relative;
     min-width: 100%;
-    transition: 0.5s ease-in-out;
+    height: 1024px; /* Hauteur des slides 
 }
 
 .jarallax-img {
-    width: 1200px;
-    height: 800px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
-.encadre {
+.message {
     position: absolute;
-    top: 30px;
+    top: 50%;
     left: 50%;
-    transform: translateX(-50%);
-    padding: 20px;
-    background-color: rgba(0, 0, 0, 0.6); /* Fond semi-transparent */
+    transform: translate(-50%, -50%);
     color: white;
+    background-color: rgba(45, 43, 43, 0.5); /* Fond semi-transparent 
+    padding: 20px;
     border-radius: 10px;
-    width: 70%;
-    text-align: center;
+    text-align: left;
+    z-index: 2;
+    overflow: visible ;
 }
 
-.encadre p {
-    font-size: 1.5em;
+.message h1 {
+    font-size: 6em;
     margin: 0;
-}
+} 
+ */

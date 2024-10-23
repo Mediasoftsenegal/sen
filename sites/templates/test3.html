@@ -1,0 +1,110 @@
+
+{% comment %} {% extends 'base.html' %} {% endcomment %}
+
+{% block title %}Accueil{% endblock %}
+
+{% load static %}
+<link rel="stylesheet" type="text/css" href="{% static  'css/css.css' %}">
+<body> {% block content %}
+  <nav id="header-nav" class="navbar navbar-expand-lg px-3 mb-3">
+    
+    <div class="container-fluid">
+      
+      <a class="navbar-brand" href="#"><img src=" {% static 'img/neologo.jpg' %}" width="35%" height="35%" class="logo" /></a>
+      <button class="navbar-toggler text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation"><ion-icon name="menu-outline"></ion-icon></button>
+      
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        
+          <div class="offcanvas-body">
+            <ul class="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3">
+              <li class="nav-item">
+                <a class="nav-link me-4" href="#intro">Accueil</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href="#about">Présentation</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href="#events">Interventions</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href="#latest-stories">Partenariat</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href="#section-des-articles">Actualités</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link me-4" href="#latest-stories">Contact</a>
+              </li>
+            </ul>
+          </div>
+    </div>   
+    <div>
+      <ul class="right-content-start list-unstyled d-flex">
+        <li><a href="#" class="nav-link"><ion-icon name="logo-facebook" role="img" class="md hydrated"></ion-icon></a></li>
+        <li><a href="#" class="nav-link"><ion-icon name="logo-linkedin" role="img" class="md hydrated"></ion-icon></a></li>
+        <li><a href="#" class="nav-link"><ion-icon name="logo-twitter" role="img" class="md hydrated"></ion-icon></a></li>
+      </ul>
+    </div>
+</nav>
+
+    <!-- image slider start-->
+        <div class="img-slider">
+            <div class="slide">
+            <!-- radio boutons start
+            <input type="radio" name="radio-btn" id="radio1" >
+            <input type="radio" name="radio-btn" id="radio2" >
+            <input type="radio" name="radio-btn" id="radio3" >
+            <input type="radio" name="radio-btn" id="radio4" >   
+            radio boutons End-->
+              <img src="{% static 'slider/01.jpg' %}">
+              <div class = "info">
+                <h2>Slide</h2>
+    
+            <div class="slide second">
+                <img src="{% static 'slider/02.jpg' %}">
+            </div>
+            <div class="slide thrid">
+                <img src="{% static 'slider/03.jpg' %}">
+            </div>
+            <div class="slide four">
+                <img src="{% static 'slider/04.jpg' %}">
+            </div>
+            <!-- slide image End-->
+            <!-- automatic navigation Start-->
+            <div class="navigation-auto">
+                <div class="auto-btn1"></div> 
+                <div class="auto-btn2"></div> 
+                <div class="auto-btn3"></div> 
+                <div class="auto-btn4"></div>  
+            </div>
+            <!-- automatic navigation  End-->
+        
+        </div>
+         <!-- manual navigation Start-->
+         <div class="navigation-manual">
+            <label for="radio1" class="manual-btn"></label>
+            <label for="radio2" class="manual-btn"></label>
+            <label for="radio3" class="manual-btn"></label>
+            <label for="radio4" class="manual-btn"></label>
+         </div> 
+          <!-- manual navigation End-->
+        </div>    
+     <!-- image slider End-->   
+        <script type="text/javascript">
+        var counter = 1;
+        setInterval(function(){
+            document.getElementById('radio' + counter).checked = true;
+            counter++;
+            if(counter > 4){
+            counter = 1 ;
+            }
+        },5000);
+        </script>
+<em>« Une Microfinance  saine et  </em> pérenne »</p>
+{% endblock %}
+</body>
+</html>

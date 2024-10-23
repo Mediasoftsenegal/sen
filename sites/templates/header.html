@@ -1,124 +1,62 @@
-{% load static %}
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <title>Fondation Sen'Finances</title>
-  <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="format-detection" content="telephone=no">
-    <meta name="apple-mobile-web-app-capable" content="yes">
-    <meta name="mediasof" content="kalayetech">
-    <meta name="keywords" content="Finances social et solidaire">
-  <meta name="description" content="Site de la Fondation ">
+    <meta charset="utf-8">
+    <title>Fondation Sen'Finances</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="Microfinances" name="Sen Finances, Microfinances, Finances, Sénégal">
+    <meta content="Microfinances" name="description">
+    {% load static %}
+    <!-- Favicon -->
+    <link href="{% static 'img/favicon.ico' %}" rel="icon">
 
-  <link rel="stylesheet" type="text/css" href="{% static  'css/vendor.css' %}">
-  <link href="{% static 'plugins/bootstrap-5.1.3/css/bootstrap.min.css' %} " rel="stylesheet">
-  <link rel="stylesheet" type="text/css" href="{% static  'style.css' %}">
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800&family=Rubik:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+    <!-- Icon Font Stylesheet -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
 
-	<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
-	<script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- Libraries Stylesheet -->
+    <link href="{% static 'lib/owlcarousel/assets/owl.carousel.min.css' %}" rel="stylesheet">
+    <link href="{% static 'lib/animate/animate.min.css' %}" rel="stylesheet">
 
-  <!-- script
-	================================================== -->
-	<script src="{% static 'js/modernizr.js' %}"></script>
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="{% static  'css/styless.css' %}" rel="stylesheet">
 </head>
-<body data-bs-spy="scroll" data-bs-target="#header-nav" tabindex="0">
-  
-  <div id="overlayer">
-    <span class="loader">
-      <div class="dot dot-1"></div>
-      <div class="dot dot-2"></div>
-      <div class="dot dot-3"></div>
-    </span>
-  </div>
-  
-  <header class="site-header position-fixed py-1 text-white">
-      <nav id="header-nav" class="navbar navbar-expand-lg px-3 mb-3">
-    
-      <div class="container-fluid">
-        
-        <a class="navbar-brand" href="#"><img src=" {% static 'img/newlogos.png' %}" class="logo" /></a>
-  
-        <button class="navbar-toggler text-white" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar2" aria-controls="offcanvasNavbar2" aria-label="Toggle navigation"><ion-icon name="menu-outline"></ion-icon></button>
-        
-        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasNavbar2" aria-labelledby="offcanvasNavbar2Label">
-          <div class="offcanvas-header">
-            <h5 class="offcanvas-title" id="offcanvasNavbar2Label">Menu</h5>
-            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-          </div>
-          <div class="offcanvas-body">
-          <ul class="navbar-nav justify-content-end align-items-center flex-grow-1 pe-3">
-            <li class="nav-item">
-              <a class="nav-link me-4" href="{% url 'accueil' %}">Accueil</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link me-4" href="{% url 'presentation' %}">Présentation</a>
-            </li>
-             <li class="nav-item">
-              <a class="nav-link me-4" href="{% url 'interventions' %}">Interventions</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link me-4" href="{% url 'partenariat' %}">Partenariat</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link me-4" href="{% url 'actualites' %}">Actualités</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link me-4" href="{% url 'contact' %}">Contact</a>
-            </li>
-          </ul>
-         </div>
-         
+
+
+   
+    {% comment %} <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-danger px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Point E impasse UPIS - 1er étage Porte N°5 - Dakar</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>(+221) 33 864 61 01 </small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>senfinances@senfinances.sn</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
         </div>
-        <ul class="right-content-start list-unstyled d-flex">
-          <li><a href="#" class="nav-link"><ion-icon name="logo-facebook" role="img" class="md hydrated"></ion-icon></a></li>
-          <li><a href="#" class="nav-link"><ion-icon name="logo-linkedin" role="img" class="md hydrated"></ion-icon></a></li>
-          <li><a href="#" class="nav-link"><ion-icon name="logo-twitter" role="img" class="md hydrated"></ion-icon></a></li>
-        </ul>
-        </div>
-  
-    </nav>
-  </header>
-
-  {% block content %}
-  {% endblock %}
-
-
-<footer class="padding-large text-white bg-dark">
-	<div class="container">
-	    <div class="row">
-	    	
-	    	<div class="col-12 col-md-6">
-		        <img src="{% static 'img/newlogos.png' %}">
-		        <p>
-		        	<a href="mailto:senfinances@senfinances.sn">senfinances@senfinances.sn</a><br>
-		        	Point E - Rue de Saint-Louis - impasse UPIS - 1er étage Porte N°5  Dakar, Sénégal<br>
-              senfinances@senfinances.sn <br>
-		        	+221 33864 61 01
-		        </p>
-           
-		    </div>
-	    </div>
-	    <div class="d-flex justify-content-between flex-wrap py-4 my-4 border-top">
-	      <p>© 2024 Médiasoft</p>
-        <p><i>« Contribuer à l’amélioration des conditions de vie des populations marginalisées et défavorisées du Sénégal »</i> </p>
-	    </div>
-	</div>
-</footer>
-
-<script src="{% static 'js/jquery-1.11.0.min.js' %} "></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
-<script src="{% static 'plugins/bootstrap-5.1.3/js/bootstrap.bundle.min.js ' %}"></script>
-<script src="{% static 'js/plugins.js ' %}"></script>
-<script src="{% static 'js/script.js' %}"></script>
-
-</body>
-</html>
+    </div> {% endcomment %}
+    <!-- Topbar End -->

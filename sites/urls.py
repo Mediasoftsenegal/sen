@@ -1,7 +1,7 @@
 # myapp/urls.py
 
 from django.urls import path
-from .views import accueil_view,objectifs_view,presentation_view,interventions_view,partenariat_view,actualites_view,depot_demande_view,articles_detail_view,contact_view,produits_services_view,conditions_octroi_view,suivi_evaluation_view,criteres_selection_view,generale_view,missions_objectifs_view,organisations_view,historique_view,contexte_view,equipe_view,test_view,test2_view
+from .views import accueil_view,objectifs_view,presentation_view,interventions_view,partenariat_view,actualites_view,depot_demande_view,articles_detail_view,contact_view,produits_services_view,conditions_octroi_view,suivi_evaluation_view,criteres_selection_view,generale_view,missions_objectifs_view,organisations_view,historique_view,contexte_view,equipe_view,test_view,test2_view,test01_view,test03_view
 
 
 urlpatterns = [
@@ -23,7 +23,9 @@ urlpatterns = [
     path('partenariat/', partenariat_view, name='partenariat'),
     path('actualites/', actualites_view, name='actualites'),
     path('actualites/<int:articles_id>/',articles_detail_view,name ='articles_detail'),
-    path('contact/', contact_view, name='contact'),
-    path('test/', test_view, name='test'),
-    path('test2/', test2_view, name='test2'),
+    path('contact/', contact_view, name ='contact'),
+    path('test/', test_view, name ='test'),
+    path('test2/', test2_view, name ='test2'),
+    path('test01/', test01_view, name ='test01'),
+    path('test03/', test03_view, name ='test03'),
 ]

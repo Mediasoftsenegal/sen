@@ -1,5 +1,5 @@
-from django.shortcuts import render
 from django.core.paginator import Paginator
+from django.shortcuts import render
 from .models import articles
 # Create your views here.
 
@@ -9,7 +9,7 @@ def accueil_view(request):
    
 def actualites_view(request):
     articles_list  = articles.objects.order_by('-date_publication') 
-    paginator  = Paginator(articles_list,10)
+    paginator  = Paginator(articles_list,)
     
     page_number = request.GET.get('page')
     article = paginator.get_page(page_number)
@@ -71,10 +71,18 @@ def articles_detail_view(request, articles_id):
 
 def contact_view(request):
     return render(request,"contact.html")
- 
-     
+  
 def test_view(request):
     return render(request,'test.html')   
 
 def test2_view(request):
     return render(request,'test2.html')   
+
+def test3_view(request):
+    return render(request,'test3.html')  
+
+def test01_view(request):
+    return render(request,'test01.html')  
+
+def test03_view(request):
+    return render(request,'test03.html')  

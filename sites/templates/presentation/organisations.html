@@ -1,53 +1,226 @@
-{% extends 'header.html' %}
+{% include 'header.html' %} 
 
-{% block title %}Présentation{% endblock %}
+<body>
+    {% block content %}
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
 
-{% block content %}
-<section id="intro" class="padding-large jarallax">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-7">
-				<div class="section-title my-5">
-					<h2 class="text-white display-2">Présentation</h2>
-					<div class="breadcrumb text-white">
-						<span class="item"><a href="{% url 'accueil' %}" class="text-white">Accueil</a></span> &nbsp; / &nbsp; <span class="item">Présentation</a></span> / &nbsp; <span class="item"><a href="{% url 'generale' %}">Présentation  générale</a></span> / &nbsp; <span class="item"><a href="{% url 'missions_objectifs' %}">Missions et Objectifs</span> / &nbsp; <span class="item">Organisation et gouvernance</span> / &nbsp; <span class="item"><a href="{% url 'historique' %}">Historique</a></span> / &nbsp; <span class="item"><a href="{% url 'contexte' %}">Contexte</a></span>/ &nbsp; <span class="item"><a href="{% url 'equipe' %}">Equipe opérationnelle</a></span>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-danger px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Dakar, Dkr 22 450 Dakar Ponty, Sénégal</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>(+221) 33 864 61 01 </small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>senfinances@senfinances.sn</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    {% load static %}
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            
+            <a href="#" class="navbar-brand p-0">
+				<h1 class="m-0"><img src=" {% static 'img/neologo.jpg' %}" width="70%" height="100%" class="logosen" /></h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+				<div class="navbar-nav ms-auto py-0">
+                    <a href="{% url 'accueil' %}" class="nav-item nav-link">Accueil</a>
+					<div class="nav-item dropdown">
+                    	<a href="{% url 'presentation' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" class="nav-item nav-link active">Présentation</a>
+						<div class="dropdown-menu m-0">
+							<a href="{% url 'generale' %}" class="dropdown-item">Présentation générale</a>
+							<a href="{% url 'missions_objectifs' %}" class="dropdown-item">Missions et objectifs</a>
+							<a href="{% url 'organisations' %}" class="dropdown-item">Organisme et gouvernance</a>
+							<a href="{% url 'historique' %}" class="dropdown-item">Historique</a>
+							<a href="{% url 'contexte' %}" class="dropdown-item">Contexte</a>
+							<a href="{% url 'equipe' %}" class="dropdown-item">Equipe opérationnelle</a>
+						</div>
 					</div>
-					
-				</div>
-			</div>
-		</div>
-	</div>
-	{% load static %}
-<img src="{% static 'images/img_banner.jpg'  %}" class="jarallax-img">
-</section>
-<section class="pt-5 pb-5">
-	<div class="container">
-		<div class="row">
-			<div class="single-image col-md-12">
-				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut cursus leo vel orci malesuada, id sodales em volutpat. Vivamus sagittis pulvinar dignissim. Mauris tempus a lacus eu aliquet. Mauris gravida at ectus quis venenatis. Aenean quis feugiat turpis. Etiam lacinia interdum nibh, non convallis magna lementum vel. Phasellus varius quam ligula, in lobortis risus porttitor ut. Praesent ipsum elit, lobortis n tincidunt a, dapibus et lorem. Praesent eget dui a est fringilla rutrum sit amet in eros. Vestibulum ut ros sed enim feugiat lobortis. Suspendisse fermentum nunc in est mattis molestie. Mauris ut placerat isus. Aenean mollis neque libero, ut pellentesque arcu dapibus vel.</p>
-				<p>Praesent nec nisl euismod, lacinia tellus eget, bibendum ex. Maecenas imperdiet gravida pulvinar. aecenas feugiat id tellus sed sodales. Praesent maximus ultricies elit eget accumsan. Proin tortor ante, ltrices a aliquet a, facilisis quis sapien. Donec eu turpis at velit scelerisque faucibus id eget dolor. tiam lobortis ante ipsum, sed venenatis ligula facilisis quis. Fusce blandit commodo mauris, sed fringilla isi congue et. Nunc eu eros ex.</p>
-				
-			</div>
-		</div>
-		<div class="row">
-			<div class="col"><img src="{% static 'images/post-thumb-2.jpg' %}" alt="About us" /></div>
-			<div class="col"><img src="{% static 'images/post-thumb-3.jpg' %}" alt="About us" /></div>
-			<div class="col"><img src="{% static 'images/post-thumb-5.jpg' %}" alt="About us" /></div>
-		</div>
-		<div class="row">
-			<div class="col-md-12">
-				<h2 class="mt-5">Motto</h2>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste.
-				</p>
-				<p>
-					Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Sed ut perspiciatis unde omnis iste.
-				</p>
-			
-			</div>
+                    <div class="nav-item dropdown">
+                        <a href="{% url 'interventions' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" class="nav-item nav-link">Interventions</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="{% url 'produits_services' %}" class="dropdown-item">Produits et Services</a>
+                            <a href="{% url 'conditions_octroi' %}" class="dropdown-item">Conditions d'octroi de crédit</a>
+                            <a href="{% url 'suivi_evaluation' %}" class="dropdown-item">Suivi et évaluation</a>
+                            <a href="{% url 'criteres_selection' %}" class="dropdown-item">Critères de sélection</a>
+                            <a href="{% url 'depot_demande' %}" class="dropdown-item">Dépôts des demandes</a>
+                        </div>
+                        </div> 
+                        <div class="nav-item dropdown">
+                            <a href="{% url 'partenariat' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" class="nav-item nav-link">Partenariat</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="{% url 'generale' %}" class="dropdown-item">Réseaux et groupes de réflexion </a>
+                                <a href="{% url 'missions_objectifs' %}" class="dropdown-item">Principes de partenariat</a>
+                            </div>
+                        </div> 
+                    <a href="{% url 'actualites' %}" class="nav-item nav-link">Actualités</a>
+                    <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                </div>
+                <butaton type="button" class="btn text-info ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
+            </div>
+        </nav> 
+    
+        <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+            <div class="row py-5">
+                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                    <h1 class="display-4 text-white animated zoomIn">Organisme et gouvernance</h1>
+                    <a href="" class="h5 text-white">Accueil</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="{% url 'presentation' %}" class="h5 text-white">Présentation</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="{% url 'generale' %}" class="h5 text-white active">Présentation générale</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="{% url 'missions_objectifs' %}" class="h5 text-white">Missions et objectifs</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="{% url 'organisations' %}" class="h5 text-white">Organisme et gouvernance</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="{% url 'historique' %}" class="h5 text-white">Historique</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="{% url 'contexte' %}" class="h5 text-white">Contexte</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="{% url 'equipe' %}" class="h5 text-white">Equipe opérationnelle</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
 
-		</div>
-	</div>
-</section>
 
- {% endblock %}
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-danger p-3" placeholder="Tapez le mot-clé de recherche">
+                        <button class="btn btn-danger px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-9">
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h1 class="mb-0">Organisme et gouvernance</h1>
+                    </div>
+                        <h4 class="mb-0">Organisation</h4><br>
+                        <p align="justify" class="mb-4" >Sen’Finances est une Fondation d’utilité publique de droit sénégalais, son fonctionnement est régi par ses statuts et son règlement intérieur adoptés lors de l’Assemblée générale constitutive du 20 juillet 2006.</p>
+                        <p class="mb-4" align="justify">Elle est placée sous la tutelle administrative et technique du Ministère de l’Economie et des Finances.</p>
+                        <p class="mb-4" align="justify">Le mode d’organisation est de type conseil de Fondation et Administrateur Général.</p>
+                    <div class="row g-5">
+                        <div class="col-lg-6 wow slideInUp" data-wow-delay="0.3s">
+                            <div class="team-item bg-light rounded overflow-hidden">
+                                <img class="img-fluid w-100" src="{% static 'images/Conseil_F.jpg' %}" alt="">
+                            </div>
+                        </div>
+                        <div class="col-lg-6  wow zoomIn" data-wow-delay="0.9s"><p class="mb-4" align="justify">
+                            <img class="img-fluid w-100" src="{% static 'images/Comite.jpg' %}" alt="">
+                        </div>
+                    </div>
+                    <h4 class="mb-0">Ressources financières</h4><br>
+                    <p align="justify" class="mb-4" >Sen’Finances est une Fondation d’utilité publique de droit sénégalais, son fonctionnement est régi par ses statuts et son règlement intérieur adoptés lors de l’Assemblée générale constitutive du 20 juillet 2006.</p>
+                    <strong><p align="justify" class="mb-4" >Les  ressources internes sont constituées  :</p></strong>
+                    <div class="fondcla">
+                    <ul>
+                        <li>de la dotation initiale, c’est-à-dire le patrimoine d’affectation apporté par l’Etat du Sénégal et les autres structures fondatrices;</li> 
+                        <li>des produits des intérêts générés par le financement des SFD;</li>
+                        <li>des produits des intérêts créditeurs générés par les placements bancaires;</li>
+                        <li>des produits exceptionnels comme les intérêts de retard;</li>
+                        <li>des produits générés par les activités annexes (organisation de séminaires, conférences, etc.)</li>
+                    </ul>  
+                    <strong><p align="justify" class="mb-4" >Les ressources externes proviennent :  </p></strong>  
+                    <ul>
+                        <li>des dons, legs ou subventions d’origine publique ou privée;</li> 
+                        <li>des ressources affectées des bailleurs de fonds;</li>
+                        <li>des lignes de crédits concédées par des bailleurs de fonds ;</li>
+                        <li>des investissements des tiers;</li>
+                        <li>des refinancements sur le marché privé;</li>
+                    </ul>  
+                    <h4 class="mb-0">Organigramme Sen'finances</h4><br>
+                    <div class="team-item bg-light rounded overflow-hidden">
+                        <img class="img-fluid w-100" src="{% static 'images/organigramm.jpg' %}" alt="">
+                    </div>
+                </div>
+                </div>
+                
+                <div class="col-lg-3">
+                    <div class="service-item bg-light rounded d-flex flex-column justify-content-center text-gauche"> 
+                            <div class="section-title section-title-sm position-relative pb-3 mb-12">
+                                <h3 class="text- mb-0">Adresse</h3>
+                            </div>
+                            <div class="d-flex mb-12">
+                                <i class="bi bi-geo-alt text-primary me-2"></i>
+                                <p class="mb-0">Dakar, Dkr 22 450 Dakar Ponty, Sénégal</p>
+                            </div>
+                            <div class="d-flex mb-12">
+                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">senfinances@senfinances.sn</p>
+                            </div>
+                            <div class="d-flex mb-12">
+                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <p class="mb-0">(+221) 33 864 61 01</p>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+   
+    
+    {% endblock %}
+ 
+    {% include 'footer.html' %} 
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    {% load static %}
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>
