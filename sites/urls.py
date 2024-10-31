@@ -1,7 +1,9 @@
 # myapp/urls.py
 
 from django.urls import path
-from .views import accueil_view,objectifs_view,presentation_view,interventions_view,partenariat_view,actualites_view,depot_demande_view,articles_detail_view,contact_view,produits_services_view,conditions_octroi_view,suivi_evaluation_view,criteres_selection_view,generale_view,missions_objectifs_view,organisations_view,historique_view,contexte_view,equipe_view,test_view,test2_view,test01_view,test03_view
+
+from .views import accueil_view,objectifs_view,presentation_view,interventions_view,partenariat_view,actualites_view,depot_demande_view,articles_detail_view,contact_view,produits_services_view,conditions_octroi_view,suivi_evaluation_view,criteres_selection_view,generale_view,missions_objectifs_view,organisations_view,historique_view,contexte_view,equipe_view,principes_view,reseau_view,cdmp_view,cdmps_view,depots_view,caracteristiques_view,cible_view,ligne_refinancement_view,lastnew_view
+
 
 
 urlpatterns = [
@@ -21,11 +23,16 @@ urlpatterns = [
     path('interventions/criteres_selection', criteres_selection_view, name='criteres_selection'),
     path('interventions/depot_demande', depot_demande_view, name='depot_demande'),
     path('partenariat/', partenariat_view, name='partenariat'),
-    path('actualites/', actualites_view, name='actualites'),
+    path('partenariat/principes', principes_view, name='principes'),
+    path('partenariat/reseau', reseau_view, name='reseau'),   
+    path('partenariat/cdmp', cdmp_view, name='cdmp'),
+    path('partenariat/cdmps', cdmps_view, name='cdmps'),
+    path('partenariat/depots', depots_view, name='depots'),
+    path('partenariat/caracteristiques', caracteristiques_view, name='caracteristiques'),
+    path('partenariat/cible', cible_view, name='cible'),
+    path('partenariat/ligne_refinancement', ligne_refinancement_view, name='ligne_refinancement'),     
+    path('actualites/actualites', actualites_view, name='actualites'),
     path('actualites/<int:articles_id>/',articles_detail_view,name ='articles_detail'),
+    path('actualites/articles_detail/',lastnew_view,name ='articles_detail'),
     path('contact/', contact_view, name ='contact'),
-    path('test/', test_view, name ='test'),
-    path('test2/', test2_view, name ='test2'),
-    path('test01/', test01_view, name ='test01'),
-    path('test03/', test03_view, name ='test03'),
 ]

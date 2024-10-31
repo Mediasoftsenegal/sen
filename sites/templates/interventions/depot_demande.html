@@ -69,8 +69,8 @@
                         <div class="nav-item dropdown">
                             <a href="{% url 'partenariat' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" class="nav-item nav-link">Partenariat</a>
                             <div class="dropdown-menu m-0">
-                                <a href="{% url 'generale' %}" class="dropdown-item">Réseaux et groupes de réflexion </a>
-                                <a href="{% url 'missions_objectifs' %}" class="dropdown-item">Principes de partenariat</a>
+                                <a href="{% url 'reseau' %}" class="dropdown-item">Réseaux et groupes de réflexion </a>
+                                <a href="{% url 'principes' %}" class="dropdown-item">Principes de partenariat</a>
                             </div>
                         </div> 
                     <a href="{% url 'actualites' %}" class="nav-item nav-link">Actualités</a>
@@ -126,32 +126,78 @@
         <div class="container py-5">
             <div class="row g-5">
                 <div class="col-lg-7">
+                    
                     <div class="section-title position-relative pb-3 mb-5">
                         <h1 class="mb-0">Dépôts des demandes</h1>
                     </div>
-                    <p class="mb-4" align="justify">Du Fonds de Contrepartie Sénégalo-Suisse …Créé dans le cadre d’un accord de réduction de dette signé le 4 juillet 1994 entre les gouvernements suisse et sénégalais, le Fonds de Contrepartie Sénégalo-Suisse fut l’un des douze fonds issus du programme suisse de désendettement créatif. D’un montant total de <b>1,9 milliards de francs CFA</b> , il était destiné au financement des Systèmes Financiers Décentralisés (SFD) et à la promotion des micros, petites et moyennes entreprises au Sénégal.</p>
-                    <p class="mb-4" align="justify">Il a connu deux grandes phases dans son fonctionnement :  <br>
-                    <br>la première, de 1995 à 1998 durant laquelle seuls des crédits directs ont été accordés, au profit de promoteurs individuels et de micro et petites entreprises intervenant essentiellement dans le secteur primaire. Au total, <b>17 projets</b> ont été financés pour une enveloppe globale de <b>169 623 262 FCFA</b>. Le taux de recouvrement pour ces projets de la première phase est d’environ 70%.
-
-                    La seconde phase, de 1998 à 2007, basée sur le principe de l’octroi de lignes de crédit à des intermédiaires financiers de type Systèmes Financiers Décentralisés. Un total de 32 lignes de crédit ont été accordées pour une enveloppe globale de<b> 1 617 715 420 FCFA</b> . Ce montant se répartit en <b>1 540 932 600 FCFA</b> de lignes de crédit et <b>76 782 820 FCFA</b>de subventions pour la formation et l’appui institutionnel.
-
-                    Ces lignes de crédit ont permis d’octroyer près de 6 000 prêts dont les montants varient entre 10 000 et 12 000 000 F CFA, et de toucher au total plus de 25 000 personnes. Pour cette deuxième phase, le taux de recouvrement est de 92%.<br>
-                    <p class="mb-4">Le FCSS a toujours joui d’une bonne réputation dans le système de l’intermédiation financière et de la microfinance du Sénégal.</p>
                     
-                    <p class="mb-4" align="justify">L’évaluation à mi-parcours du FCSS réalisée en 2001 souligne l’originalité et l’efficacité de sa démarche qui se caractérise notamment par une forte implication des différents organes (Secrétariat Exécutif, Comité Technique et Comité Bilatéral) dans le processus de sélection des projets, un capital disponible, un choix pertinent des bénéficiaires et une flexibilité des conditionnalités. Cette combinaison d’atouts s’est fait ressentir au niveau des bénéficiaires. En effet, un impact positif a été constaté sur leurs conditions de vie, se traduisant par une augmentation de leur volume d’activités, de leurs revenus et de leur niveau d’épargne. L’impact positif provient également des subventions accordées qui ont permis la formation de leaders d’organisations à la gestion et la mise en place d’outils de gestion.</p>
-                    <p class="mb-4">… A la Fondation Sen’Finances</p>
-                    <p class="mb-4">Cependant, l’un des concepts clés du programme de désendettement créatif lancé par la Suisse en 1991 prévoyait le désengagement du dispositif opérationnel du Fonds environ dix ans après sa mise en place.
-                        C’est la raison pour laquelle les différents acteurs s’étant accordés sur le principe de pérenniser l’expérience du FCSS ont été amenés à réfléchir sur son avenir institutionnel, tout en tenant compte des forces et faiblesses relevées dans son fonctionnement.</p>
-
-                    <p class="mb-4">Ces réflexions ont conduit à la décision de pérenniser l’expérience du FCSS en mettant sur pied une fondation d’utilité publique: la Fondation Sen’Finances.
-                        Pour poser les bases de la Fondation, les deux Gouvernements se sont entendus sur un nouvel accord signé le 22 juillet 2004, portant sur le transfert des ressources du FCSS à Sen’Finances.
-                        La Fondation Sen’Finances a, outre l’Etat sénégalais, sept autres membres fondateurs parmi lesquels les institutions qui étaient représentées au sein du Comité Technique du FCSS.</p>
-
-                    <p class="mb-4">La Fondation Sen’Finances se conforme aux exigences légales et réglementaires en vigueur et exerce ses activités sous la tutelle administrative et technique du Ministère de l’Economie et des Finances. Elle a été reconnue d’utilité publique par le Décret N° 2007-959 signé le 7 septembre 2007par le Président de la République du Sénégal.</p>
+                    <h4 class="mb-4" align="justify">Documents à fournir</h4>
+                    <p class="mb-4" align="justify">Les structures qui sollicitent un financement auprès de Sen’Finances doivent déposer un dossier de demande de financement comportant les éléments suivants : </p>  <br>
+                    <br>
+                    <div class="row g-0">
+                        <div class="col-lg-12 wow slideInUp" data-wow-delay="0.6s">
+                            <div class="bg-light rounded">
+                                <div class="border-bottom py-4 px-5 mb-4">
+                                    <h4 class="text-primary mb-1">Liste des documents</h4>                          
+                                </div>
+                                <div class="p-5 pt-0">
+                                    <div class="d-flex justify-content-between mb-3"><span><i class="fa fa-certificate"></i> Une lettre adréssée à l’Administrateur Général</span><i class="fa fa-check text-primary pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-3"><span><i class="fa fa-certificate"></i> Une requête de financement présentée sous forme de projet ou programme</span><i class="fa fa-check text-primary pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-3"><span><i class="fa fa-certificate"></i> Un formulaire « demande de financement : fiche signalétique » dûment rempli. Ce formulaire est à retirer auprés du sécrétariat de Sen’Finances ou à télécharger ci- dessous.</span><i class="fa fa-check text-primary pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-2"><span><i class="fa fa-certificate"></i> Leurs statuts et réglements intérieur</span><i class="fa fa-check text-primary pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-2"><span><i class="fa fa-certificate"></i> La liste des membres des organes d’administration, de gestion et de contrôle</span><i class="fa fa-check text-primary pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-2"><span> <i class="fa fa-certificate"></i> Les états financiers des trois (3) derniers exercices y compris les annexes</span><i class="fa fa-check text-primary pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-2"><span><i class="fa fa-certificate"></i>  Leurs statuts et réglements intérieur</span><i class="fa fa-check text-primary pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-2"><span> <i class="fa fa-certificate"></i> Le dernier rapport annuel tel que prévu par les institutions de la BCEAO</span><i class="fa fa-check text-primary pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-2"><span> <i class="fa fa-certificate"></i> Une copie de l’agrément</span><i class="fa fa-check text-primary pt-1"></i></div>
+                                    <div class="d-flex justify-content-between mb-2"><span><i class="fa fa-certificate"></i>  Tout autre document qu’elles souhaitent mettre à disposition de Sen’Finances</span><i class="fa fa-check text-primary pt-1"></i></div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>    
+                    <div class="row g-5">
+                        <div class="col-lg-9"> 
+                            <img class="rounded wow zoomIn" data-wow-delay="0.9s" src="{% static 'images/img_demande_pret.jpg' %}" style="object-fit: cover;">
+                        </div>    
+                    </div><br>
+                    <h4 class="mb-0">Documents à télécharger</h4> <br>
+                    <ol>
+                        <li> <strong> <a href="{% url 'historique' %}">Télécharger le formulaire à remplir et déposer auprés de nos services</a></strong></li><br>
+                        <li> <strong>Télécharger le Canevas de demande de financement</strong></li><br>
+                        <li> <strong>Télécharger la plaquette de la fondation</strong></li><br>
+                    </ol>  
+                    <p class="mb-4" align="justify">Sen Finances se réserve le droit de demander aprés réception de la requête tout autre document complémentaire. Une visite de la structure pourra être effectuée avant notification de la suite réservée à la demande. </p>  
                 </div>
-                <div class="col-lg-5" style="min-height: 500px;">
-                    <div class="position-relative h-100">
-                        <img class="position-absolute w-100 h-100 rounded wow zoomIn" data-wow-delay="0.9s" src="{% static 'img/img_present.jpg' %}" style="object-fit: cover;">
+                <div class="col-lg-3">
+                    <div class="service-item bg-light rounded d-flex flex-column justify-content-center text-gauche"> 
+                            <div class="section-title section-title-sm position-relative pb-3 mb-12">
+                                <h3 class="text- mb-0">Adresse</h3>
+                            </div>
+                            <strong> Fondation Sen'Finances</strong>
+                            <div class="d-flex mb-12">
+                                <i class="bi bi-geo-alt text-primary"></i>
+                                <p class="mb-0">Impasse Upis POINT E 1er étage porte N°5</p>
+                            </div>    
+                            <div class="d-flex mb-12">   
+                                <p class="mb-0">Dakar</p>
+                            </div> 
+                            <div class="d-flex mb-12">   
+                                <p class="mb-0">Sénégal</p>
+                            </div>  
+                            <div class="d-flex mb-12">     
+                                <p class="mb-0">22 450 Dakar Ponty</p>
+                            </div>
+                            <div class="d-flex mb-12">
+                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">senfinances@senfinances.sn</p>
+                            </div>
+                            <div class="d-flex mb-12">
+                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <p class="mb-0">(+221) 33 864 61 01</p>
+                            </div>
+                        </div>
+                        </a>
                     </div>
                 </div>
             </div>
@@ -160,69 +206,8 @@
     <!-- About End -->
 
 
-    <!-- Team Start -->
-    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
-        <div class="container py-5">
-            <div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
-                <h1 class="mb-0">Equipe opérationnelle</h1>
-            </div>
-            <div class="row g-5">
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
-                    <div class="team-item bg-light rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{% static 'img/team-1.jpg' %}" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
-                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-primary">Mme Denise Fatoumata NDOUR</h4>
-                            <p class="text-uppercase m-0">Administrateur Général</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
-                    <div class="team-item bg-light rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{% static 'img/team-2.jpg' %}" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
-                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-primary">Mme Ramatoulaye Fine SARR</h4>
-                            <p class="text-uppercase m-0">Assistante de Direction</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
-                    <div class="team-item bg-light rounded overflow-hidden">
-                        <div class="team-img position-relative overflow-hidden">
-                            <img class="img-fluid w-100" src="{% static 'img/team-3.jpg' %}" alt="">
-                            <div class="team-social">
-                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-twitter fw-normal"></i></a>
-                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
-                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-instagram fw-normal"></i></a>
-                                <a class="btn btn-lg btn-danger btn-lg-square rounded" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
-                            </div>
-                        </div>
-                        <div class="text-center py-4">
-                            <h4 class="text-primary">Mr Papa Samba THIAM</h4>
-                            <p class="text-uppercase m-0">Coursier</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     {% endblock %}
-    <!-- Team End -->
+
     {% include 'footer.html' %} 
 
 

@@ -99,8 +99,8 @@
                     <div class="nav-item dropdown">
                         <a href="{% url 'partenariat' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" class="nav-item nav-link">Partenariat</a>
                         <div class="dropdown-menu m-0">
-                            <a href="{% url 'generale' %}" class="dropdown-item">Réseaux et groupes de réflexion </a>
-                            <a href="{% url 'missions_objectifs' %}" class="dropdown-item">Principes de partenariat</a>
+                            <a href="{% url 'reseau' %}" class="dropdown-item">Réseaux et groupes de réflexion </a>
+                            <a href="{% url 'principes' %}" class="dropdown-item">Principes de partenariat</a>
                         </div>
                     </div> 
                     <a href="{% url 'actualites' %}" class="nav-item nav-link">Actualités</a>
@@ -418,6 +418,19 @@
             <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.6s">
                 <div class="testimonial-item bg-light my-4">
                     <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
+                        <img class="img-fluid rounded" src="{% static 'images/cdmp.jpeg' %}" style="width: 60px; height: 60px;" >
+                        <div class="ps-4">
+                            
+                            <small class="text-uppercase"><a href="{% url 'cdmp' %}" >La Caissse des Marchés Publics (CDMP-SA)</a></small>
+                        </div>
+                    </div>
+                    <div class="pt-4 pb-5 px-5">
+                        Mise en avant des petites et moyennes entreprises et participation à la promotion de l'entrepreunariat
+                        et à l'appui de l'économie locale.
+                    </div>
+                </div>
+                <div class="testimonial-item bg-light my-4">
+                    <div class="d-flex align-items-center border-bottom pt-5 pb-4 px-5">
                         <img class="img-fluid rounded" src="{% static 'images/logo sidi.jpg' %}" style="width: 60px; height: 60px;" >
                         <div class="ps-4">
                             <small class="text-uppercase">Solidarité Internationale pour le Développement et l'Investissement</small>
@@ -681,6 +694,7 @@
                     <div class="blog-item bg-light rounded overflow-hidden">
                         <div class="blog-img position-relative overflow-hidden">
                             <img class="img-fluid" src="{% static articles.imagealaune.url %}" style="width: 500px; height: 200px;">
+                            <a class="position-absolute top-0 start-0 bg-orangelogo text-white rounded-end mt-5 py-2 px-4" href="">{{ articles.categorie }}</a>
                         </div>
                         <div class="p-4">
                             <div class="d-flex mb-3">

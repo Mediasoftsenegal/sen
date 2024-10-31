@@ -12,7 +12,7 @@ class auteurAdmin(admin.ModelAdmin):
 admin.site.register(auteur)
 
 class articlesAdmin(admin.ModelAdmin):
-    list_display = ('titre','contenu','auteur','date_publication','categorie','imagealaune','image')
+    list_display = ('titre','contenu','auteur','date_publication','categorie','imagealaune')
     
     def image_preview(self,obj):
         if obj.image:
@@ -21,7 +21,7 @@ class articlesAdmin(admin.ModelAdmin):
     image_preview.short_description = 'Aperçu Image'
     
     search_fields = ('titre','contenu')
-    fields = ('titre','contenu','auteur','date_publication','categorie','imagealaune','image')
+    fields = ('titre','contenu','auteur','date_publication','categorie','imagealaune')
     readonly_fields = ('date_publication','image_preview')
     list_filter = ('date_publication', 'auteur')
     ordering = ('-date_publication',)

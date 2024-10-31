@@ -1,0 +1,258 @@
+{% include 'header.html' %} 
+
+<body>
+    {% block content %}
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-danger px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Dakar, Dkr 22 450 Dakar Ponty, Sénégal</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>(+221) 33 864 61 01 </small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>senfinances@senfinances.sn</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    {% load static %}
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            
+            <a href="#" class="navbar-brand p-0">
+				<h1 class="m-0"><img src=" {% static 'img/neologo.jpg' %}" width="70%" height="100%" class="logosen" /></h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+				<div class="navbar-nav ms-auto py-0">
+                    <a href="{% url 'accueil' %}" class="nav-item nav-link">Accueil</a>
+					<div class="nav-item dropdown">
+                    	<a href="{% url 'presentation' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" class="nav-item nav-link active">Présentation</a>
+						<div class="dropdown-menu m-0">
+							<a href="{% url 'generale' %}" class="dropdown-item">Présentation générale</a>
+							<a href="{% url 'missions_objectifs' %}" class="dropdown-item">Missions et objectifs</a>
+							<a href="{% url 'organisations' %}" class="dropdown-item">Organisme et gouvernance</a>
+							<a href="{% url 'historique' %}" class="dropdown-item">Historique</a>
+							<a href="{% url 'contexte' %}" class="dropdown-item">Contexte</a>
+							<a href="{% url 'equipe' %}" class="dropdown-item">Equipe opérationnelle</a>
+						</div>
+					</div>
+                    <div class="nav-item dropdown">
+                        <a href="{% url 'interventions' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" class="nav-item nav-link">Interventions</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="{% url 'produits_services' %}" class="dropdown-item">Produits et Services</a>
+                                <a href="{% url 'conditions_octroi' %}" class="dropdown-item">Conditions d'octroi de crédit</a>
+                                <a href="{% url 'suivi_evaluation' %}" class="dropdown-item">Suivi et évaluation</a>
+                                <a href="{% url 'criteres_selection' %}" class="dropdown-item">Critères de sélection</a>
+                                <a href="{% url 'depot_demande' %}" class="dropdown-item">Dépôts des demandes</a>
+                            </div>
+                        </div> 
+                        <div class="nav-item dropdown">
+                            <a href="{% url 'partenariat' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" class="nav-item nav-link">Partenariat</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="{% url 'reseau' %}" class="dropdown-item">Réseaux et groupes de réflexion </a>
+                                <a href="{% url 'principes' %}" class="dropdown-item">Principes de partenariat</a>
+                            </div>
+                        </div> 
+                    <a href="{% url 'actualites' %}" class="nav-item nav-link">Actualités</a>
+                    <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                </div>
+                <butaton type="button" class="btn text-info ms-3" data-bs-toggle="modal" data-bs-target="#searchModal"><i class="fa fa-search"></i></butaton>
+            </div>
+        </nav> 
+    
+        <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 90px;">
+            <div class="row py-5">
+                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                    <h1 class="display-4 text-white animated zoomIn">La Caissse des Marchés Publics (CDMP-SA)</h1>
+                    <a href="" class="h5 text-white">Accueil</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="{% url 'presentation' %}" class="h5 text-white">Partenariat</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="{% url 'generale' %}" class="h5 text-white active">Réseaux et groupes de réflexion</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="{% url 'missions_objectifs' %}" class="h5 text-white">Principes de partenariat</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+
+
+    <!-- Full Screen Search Start -->
+    <div class="modal fade" id="searchModal" tabindex="-1">
+        <div class="modal-dialog modal-fullscreen">
+            <div class="modal-content" style="background: rgba(9, 30, 62, .7);">
+                <div class="modal-header border-0">
+                    <button type="button" class="btn bg-white btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body d-flex align-items-center justify-content-center">
+                    <div class="input-group" style="max-width: 600px;">
+                        <input type="text" class="form-control bg-transparent border-danger p-3" placeholder="Tapez le mot-clé de recherche">
+                        <button class="btn btn-danger px-4"><i class="bi bi-search"></i></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Full Screen Search End -->
+
+
+    <!-- About Start -->
+    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-lg-9">
+                    
+                    <div class="section-title position-relative pb-3 mb-5">
+                        <h1 class="mb-0">La Caisse des Marchés Publics (CDMP-SA)</h1>
+                    </div>
+                    
+                    <h4 class="mb-4" align="left">Partenariat Sen’Finances -La Caisse des Marchés Publics (CDMP-SA)</h4>
+                    <br>
+                    <!-- Team Start -->
+                    <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+                        <div class="container py-5">            
+                            <div class="row g-5">
+                                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.3s">
+                                    <div class="team-item bg-light rounded overflow-hidden">
+                                        <div class="team-img position-relative overflow-hidden">
+                                            <img class="img-fluid w-100" src="{% static 'images/part_cdmp.png' %}" alt="">
+                                        </div>
+                                        <div class="text-center py-4">
+                                            <h4 class="text-primary">Partenariat</h4>
+                                            <p class="text-uppercase m-0"><a href="{% url 'cdmps' %}"> Plus d'infos </a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.6s">
+                                    <div class="team-item bg-light rounded overflow-hidden">
+                                        <div class="team-img position-relative overflow-hidden">
+                                            <img class="img-fluid w-100" src="{% static 'images/part_ligne.png' %}" alt="">                          
+                                        </div>
+                                        <div class="text-center py-4">
+                                            <h4 class="text-primary">Ligne de refinancement</h4>
+                                            <p class="text-uppercase m-0"><a href="{% url 'ligne_refinancement' %}"> Plus d'infos </a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                                    <div class="team-item bg-light rounded overflow-hidden">
+                                        <div class="team-img position-relative overflow-hidden">
+                                            <img class="img-fluid w-100" src="{% static 'images/part3.png' %}" alt="">
+                                        </div>
+                                        <div class="text-center py-4">
+                                            <h4 class="text-primary">Cible du PAECCOP</h4>
+                                            <p class="text-uppercase m-0"><a href="{% url 'cible' %}"> Plus d'infos </a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                                    <div class="team-item bg-light rounded overflow-hidden">
+                                        <div class="team-img position-relative overflow-hidden">
+                                            <img class="img-fluid w-100" src="{% static 'images/part_caractéristiques.png' %}" alt="">
+                                        </div>
+                                        <div class="text-center py-4">
+                                            <h4 class="text-primary">Caractéristiques des prêts</h4>
+                                            <p class="text-uppercase m-0"><a href="{% url 'caracteristiques' %}"> Plus d'infos </a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4 wow slideInUp" data-wow-delay="0.9s">
+                                    <div class="team-item bg-light rounded overflow-hidden">
+                                        <div class="team-img position-relative overflow-hidden">
+                                            <img class="img-fluid w-100" src="{% static 'images/part_depots.png' %}" alt="">
+                                        </div>
+                                        <div class="text-center py-4">
+                                            <h4 class="text-primary">Dépôts des demandes</h4>
+                                            <p class="text-uppercase m-0"><a href="{% url 'depots' %}"> Plus d'infos </a></p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                          
+                        </div>
+                        <p class="text-uppercase m-0"><a href="{% static  'Docs/Formulaire-PAECCOP-def-aout-23.pdf' %}" target='blanks'>  Télécharger le formulaire  </a></p>
+                    </div>
+                <!-- Team End -->       
+                </div>
+                <div class="col-lg-3">
+                    <div class="service-item bg-light rounded d-flex flex-column justify-content-center text-gauche"> 
+                            <div class="section-title section-title-sm position-relative pb-3 mb-12">
+                                <h3 class="text- mb-0">Adresse</h3>
+                            </div>
+                            <strong> Fondation Sen'Finances</strong>
+                            <div class="d-flex mb-12">
+                                <i class="bi bi-geo-alt text-primary"></i>
+                                <p class="mb-0">Impasse Upis POINT E 1er étage porte N°5</p>
+                            </div>    
+                            <div class="d-flex mb-12">   
+                                <p class="mb-0">Dakar</p>
+                            </div> 
+                            <div class="d-flex mb-12">   
+                                <p class="mb-0">Sénégal</p>
+                            </div>  
+                            <div class="d-flex mb-12">     
+                                <p class="mb-0">22 450 Dakar Ponty</p>
+                            </div>
+                            <div class="d-flex mb-12">
+                                <i class="bi bi-envelope-open text-primary me-2"></i>
+                                <p class="mb-0">senfinances@senfinances.sn</p>
+                            </div>
+                            <div class="d-flex mb-12">
+                                <i class="bi bi-telephone text-primary me-2"></i>
+                                <p class="mb-0">(+221) 33 864 61 01</p>
+                            </div>
+                        </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- About End -->
+
+
+    {% endblock %}
+
+    {% include 'footer.html' %} 
+
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-primary btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
+
+    {% load static %}
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
+
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
+
+</body>
+
+</html>

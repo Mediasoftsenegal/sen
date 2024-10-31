@@ -1,83 +1,167 @@
-{% extends 'header.html' %}
+{% include 'header.html' %} 
 
-{% block title %}Présentation{% endblock %}
+<body>
+    {% block content %}
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner"></div>
+    </div>
+    <!-- Spinner End -->
 
-{% block content %}
-<section id="intro" class="padding-large jarallax">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-7">
-				<div class="section-title my-5">
-					<h2 class="text-white display-2">Contact</h2>
-					<div class="breadcrumb text-white">
-						<span class="item"><a href="{% url 'accueil' %}" class="text-white">Accueil</a></span> &nbsp; / &nbsp; <span class="item">Contact</span>
+    <!-- Topbar Start -->
+    <div class="container-fluid bg-danger px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <small class="me-3 text-light"><i class="fa fa-map-marker-alt me-2"></i>Dakar, Dkr 22 450 Dakar Ponty, Sénégal</small>
+                    <small class="me-3 text-light"><i class="fa fa-phone-alt me-2"></i>(+221) 33 864 61 01 </small>
+                    <small class="text-light"><i class="fa fa-envelope-open me-2"></i>senfinances@senfinances.sn</small>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center text-lg-end">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-twitter fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-linkedin-in fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-instagram fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href=""><i class="fab fa-youtube fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    {% load static %}
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-dark px-5 py-3 py-lg-0">
+            
+            <a href="#" class="navbar-brand p-0">
+				<h1 class="m-0"><img src=" {% static 'img/neologo.jpg' %}" width="70%" height="100%" class="logosen" /></h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+				<div class="navbar-nav ms-auto py-0">
+                    <a href="{% url 'accueil' %}" class="nav-item nav-link">Accueil</a>
+					<div class="nav-item dropdown">
+                    	<a href="{% url 'presentation' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" class="nav-item nav-link active">Présentation</a>
+						<div class="dropdown-menu m-0">
+							<a href="{% url 'generale' %}" class="dropdown-item">Présentation générale</a>
+							<a href="{% url 'missions_objectifs' %}" class="dropdown-item">Missions et objectifs</a>
+							<a href="{% url 'organisations' %}" class="dropdown-item">Organisme et gouvernance</a>
+							<a href="{% url 'historique' %}" class="dropdown-item">Historique</a>
+							<a href="{% url 'contexte' %}" class="dropdown-item">Contexte</a>
+							<a href="{% url 'equipe' %}" class="dropdown-item">Equipe opérationnelle</a>
+						</div>
 					</div>
-					
+                    <div class="nav-item dropdown">
+                        <a href="{% url 'interventions' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" class="nav-item nav-link">Interventions</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="{% url 'produits_services' %}" class="dropdown-item">Produits et Services</a>
+                                <a href="{% url 'conditions_octroi' %}" class="dropdown-item">Conditions d'octroi de crédit</a>
+                                <a href="{% url 'suivi_evaluation' %}" class="dropdown-item">Suivi et évaluation</a>
+                                <a href="{% url 'criteres_selection' %}" class="dropdown-item">Critères de sélection</a>
+                                <a href="{% url 'depot_demande' %}" class="dropdown-item">Dépôts des demandes</a>
+                            </div>
+                        </div> 
+                        <div class="nav-item dropdown">
+                            <a href="{% url 'partenariat' %}" class="nav-link dropdown-toggle" data-bs-toggle="dropdown" class="nav-item nav-link">Partenariat</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="{% url 'reseau' %}" class="dropdown-item">Réseaux et groupes de réflexion </a>
+                                <a href="{% url 'principes' %}" class="dropdown-item">Principes de partenariat</a>
+                            </div>
+                        </div> 
+                    <a href="{% url 'actualites' %}" class="nav-item nav-link">Actualités</a>
+                    <a href="{% url 'contact' %}" class="nav-item nav-link">Contact</a>
+                </div>
+            </div>
+        </nav> 
+    
+        <div class="container-fluid bg-primary py-5 bg-header" style="margin-bottom: 3px;">
+            <div class="row py-5">
+                <div class="col-12 pt-lg-5 mt-lg-5 text-center">
+                    <h1 class="display-4 text-white animated zoomIn">Contact</h1>
+                    <a href="" class="h5 text-white">Accueil</a>
+                    <i class="far fa-circle text-white px-2"></i>
+                    <a href="#" class="h5 text-white">Contact</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar End -->
+	 <!-- Contact Start -->
+	 <div class="container-fluid py-5 wow fadeInUp" data-wow-delay="0.1s">
+		<div class="container py-5">
+			<div class="section-title text-center position-relative pb-3 mb-5 mx-auto" style="max-width: 600px;">
+				<h5 class="fw-bold text-primary text-uppercase">Contact informations</h5>
+				<h1 class="mb-0">Fondation Sen'Finances</h1>
+			</div>
+			<div class="row g-5 mb-5">
+				<div class="col-lg-4">
+					<div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.1s">
+						<div class="bg-danger d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+							<i class="fa fa-phone-alt text-white"></i>
+						</div>
+						<div class="ps-4">
+							<h5 class="mb-2">Tel.</h5>
+							<p class="text-primary mb-0">(+221) 33 864 61 01</p>
+						</div>
+					</div>
 				</div>
+				<div class="col-lg-4">
+					<div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.4s">
+						<div class="bg-info d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+							<i class="fa fa-envelope-open text-white"></i>
+						</div>
+						<div class="ps-4">
+							<h5 class="mb-2">Email</h5>
+							<p class="text-info mb-0">senfinances@senfinances.sn</p>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4">
+					<div class="d-flex align-items-center wow fadeIn" data-wow-delay="0.8s">
+						<div class="bg-warning d-flex align-items-center justify-content-center rounded" style="width: 60px; height: 60px;">
+							<i class="fa fa-map-marker-alt text-white"></i>
+						</div>
+						<div class="ps-4">
+							<p class="text-primary mb-0">Impasse Upis POINT E <br>1er étage porte N°5 Dakar Sénégal 22 450 Dakar Ponty</p>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="row g-5">
+				<div class="col-lg-12 wow slideInUp" data-wow-delay="0.6s">
+				<iframe loading="lazy" width="100%" height="500px" frameborder="0" allowfullscreen="" src="//umap.openstreetmap.fr/fr/map/carte-senfinances_838133?scaleControl=false&amp;miniMap=false&amp;scrollWheelZoom=false&amp;zoomControl=true&amp;allowEdit=false&amp;moreControl=true&amp;searchControl=null&amp;tilelayersControl=null&amp;embedControl=null&amp;datalayersControl=true&amp;onLoadPanel=undefined&amp;captionBar=false"></iframe>
 			</div>
 		</div>
 	</div>
-	{% load static %}
-<img src="{% static 'images/img_banner.jpg'  %}" class="jarallax-img">
-</section>
+</div>
+<!-- Contact End -->
 
-<section class="contact-information padding-large">
-	<div class="container">
-		<div class="row">
-			<div class="col-md-6 mb-3">
-				
-				<h2>Contactez-nous ?</h2>
 
-				<div class="contact-detail d-flex flex-wrap mt-4">
-					<div class="detail mr-6 mb-4">
-						<p>Adresse du bureau</p>
-						<ul class="list-unstyled list-icon">
-							<li><i class="icon icon-phone"></i>+221 33864 61 01</li>
-							<li><i class="icon icon-envelope-o"></i><a href="mailto:senfinances@senfinances.sn ">senfinances@senfinances.sn </a></li>
-							<li><i class="icon icon-location2"></i>Point E - Rue de Saint-Louis - impasse UPIS - 1er étage Porte N°5  Dakar, Sénégal</li>
-						</ul>
-					</div><!--detail-->
+    {% endblock %}
 
-				</div><!--contact-detail-->
-			</div><!--col-md-6-->
+    {% include 'footer.html' %} 
 
-			<div class="col-md-6">
-				
-				<div class="contact-information">
-					<h2>Envoyez un message</h2>
-					<form name="contactform" action="contact.php" method="post" class="form-group contact-form mt-4">
-						<div class="row">
-					    	<div class="col-md-6">
-								<input type="text" minlength="2" name="name" placeholder="Prénom et Nom" class="form-control" required>
-							</div>
-							<div class="col-md-6">
-								<input type="email" name="email" placeholder="E-mail" class="form-control" required>
-							</div>
-						</div>
 
-						<div class="row">
-							<div class="col-md-12">
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-lg btn-warning btn-lg-square rounded back-to-top"><i class="bi bi-arrow-up"></i></a>
 
-								<textarea class="form-control mt-4 mb-4" name="message" placeholder="Message" style="height: 150px;" required></textarea>
+    {% load static %}
+    <!-- JavaScript Libraries -->
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="{% static 'lib/wow/wow.min.js' %}"></script>
+    <script src="{% static 'lib/easing/easing.min.js' %}"></script>
+    <script src="{% static 'lib/waypoints/waypoints.min.js' %}"></script>
+    <script src="{% static 'lib/counterup/counterup.min.js' %}"></script>
+    <script src="{% static 'lib/owlcarousel/owl.carousel.min.js' %}"></script>
 
-								<label>
-								    <input type="checkbox" required>
-								    <span class="label-body">J'accepte tous les <a href="#">termes et conditions</a></span>
-								</label>
-							   <br>
-								<div class="d-grid">
-									<button type="submit" name="submit" class="btn btn-dark">Envoyer</button>
-								</div>
-							</div>
-						</div>
-					</form>
+    <!-- Template Javascript -->
+    <script src="{% static 'js/main.js' %}"></script>
 
-				</div><!--contact-information-->
-
-			</div><!--col-md-6-->
-
-		</div>
-	</div>
-</section>
-
- {% endblock %}
+</body>
+</html>
