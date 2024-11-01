@@ -1,0 +1,20 @@
+name: Déploiement sur cPanel
+
+on:
+  push:
+    branches: 
+    - master
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - name: Déployer sur FTP
+        uses: miyakogi/ftp-deploy@v3
+        with:
+          ftp: ${{ secrets.FTP_HOST }}
+          user: ${{ secrets.FTP_USER }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          remotedir: public_html/sens/
+          local: .
